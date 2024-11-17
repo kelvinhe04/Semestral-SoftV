@@ -3,13 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Merca Panamá</title>
-    <link rel="shortcut icon" type="image/png" href="Img/Logo.ico"/>
+    <title>Agrodelis</title>
+    <link rel="shortcut icon" type="image/png" href="Img/Logo.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/Mapa.css" />
   </head>
   <body>
-    
-      <div id="navbar-container"></div>
-      
+    <div id="navbar-container"></div>
+    <div class="map-container">
+      <h3>Ubicación de Merca Panamá</h3>
+      <div id="map"></div>
+    </div>
+
     <script>
       function cargarNavbar() {
         fetch("navbar.html")
@@ -25,6 +30,24 @@
           .catch((err) => console.error("error;", err));
       }
       window.onload = cargarNavbar;
+    </script>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+      var map = L.map("map").setView(
+        [9.033868734790088, -79.57669250534278],
+        13
+      );
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      L.marker([9.033868734790088, -79.57669250534278])
+        .addTo(map)
+        .bindPopup("<b>Merca Panamá</b><br>Vía Centenario")
+        .openPopup();
     </script>
   </body>
 </html>

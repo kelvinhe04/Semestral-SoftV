@@ -1,0 +1,16 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+.map-container{
+    width: 100%;
+      padding: 0 20px;
+}
+#map {
+  height: 600px; /* Cambia este valor según el tamaño que desees */
+  width: 100%;   /* Asegúrate de que el mapa ocupe todo el ancho de su contenedor */
+    
+}
