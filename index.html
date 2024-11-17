@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merca Panamá</title>
     
-</body>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div id="navbar-container"></div>
+      <h1 class="text-center">Listado de Especialidades</h1>
+      <button class="btn btn-primary" onclick="listarEspecialidades()">
+        Buscar
+      </button>
+      <table class="table mt-4" id="tabla">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Especialidad</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script>
+      function cargarNavbar() {
+        fetch("navbar.html")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Error de red " + response.status);
+            }
+            return response.text();
+          })
+          .then((data) => {
+            document.getElementById("navbar-container").innerHTML = data;
+          })
+          .catch((err) => console.error("error;", err));
+      }
+      window.onload = cargarNavbar;
+    </script>
+  </body>
 </html>
