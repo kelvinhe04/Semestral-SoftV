@@ -50,7 +50,7 @@
   text-align: center;
 }
 .boton-enlace {
-  background-color: #4caf50;
+  background-color: #558A7A;
   color: white;
   padding: 10px 30px;
   text-align: center;
@@ -59,7 +59,7 @@
   font-size: 16px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s;
   
 }
 
@@ -72,7 +72,21 @@ h1{
 }
 
 .dropdown-btn{
-  margin-bottom: 30px;
+  margin: 30px 0;
+  background-color: #C5414B;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+
+}
+.dropdown-btn:hover{
+    background-color: #ad3943;
+
 }
 .dropdown {
   position: relative;
@@ -82,18 +96,69 @@ h1{
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 75px; /* Justo debajo del botón */
+  left: 0; /* Alineado al lado izquierdo del botón */
   background-color: #f9f9f9;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   padding: 12px;
   border-radius: 8px;
   z-index: 1;
+  width: 260px ;
+  text-align: center;
 }
 
-.dropdown-content .checkbox-group {
+/* Contenedor del grupo */
+.checkbox-group {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+
 }
 
+/* Estilo del checkbox moderno */
+.modern-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.modern-checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+  background-color: white;
+}
+
+.modern-checkbox input[type="checkbox"]:checked {
+  border-color: #4caf50;
+  background-color: #4caf50;
+}
+
+.modern-checkbox input[type="checkbox"]:checked::after {
+  content: "✓";
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  top: 1px;
+  left: 5px;
+}
+
+.modern-checkbox span {
+  font-size: 16px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.modern-checkbox input[type="checkbox"]:checked + span {
+  color: #4caf50;
+}
 .dropdown-content .apply-filters {
   margin-top: 10px;
   padding: 8px 16px;
@@ -102,6 +167,7 @@ h1{
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  
 }
 
 .dropdown-content .apply-filters:hover {
