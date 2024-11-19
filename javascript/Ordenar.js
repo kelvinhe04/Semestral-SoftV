@@ -58,34 +58,54 @@ function mostrarProductos(productos) {
   });
 }
 
-// Función para obtener las categorías seleccionadas
-function obtenerCategoriasSeleccionadas() {
-  const categoriasSeleccionadas = [];
-  document.querySelectorAll(".categoria:checked").forEach((checkbox) => {
-    categoriasSeleccionadas.push(checkbox.value);
+document.addEventListener("DOMContentLoaded", () => { 
+  const dropdownBtn = document.querySelector(".dropdown-btn"); // Botón del dropdown
+  const dropdownContent = document.querySelector(".dropdown-content"); // Contenido del dropdown
+
+  // Evento para alternar la visibilidad del dropdown
+  dropdownBtn.addEventListener("click", () => {
+    dropdownContent.classList.toggle("show"); // Agrega o quita la clase 'show'
   });
-  return categoriasSeleccionadas;
-}
 
-// Función para filtrar los productos según las categorías seleccionadas
-function filtrarProductosPorCategorias() {
-  const categoriasSeleccionadas = obtenerCategoriasSeleccionadas();
+  // Evento para cerrar el dropdown al hacer clic fuera de él
+  document.addEventListener("click", (event) => {
+    // Si el clic no ocurre dentro del botón o el contenido del dropdown, se cierra
+    if (
+      !dropdownBtn.contains(event.target) &&
+      !dropdownContent.contains(event.target)
+    ) {
+      dropdownContent.classList.remove("show"); // Oculta el contenido
+    }
+  });
 
-  if (categoriasSeleccionadas.length > 0) {
-    const productosFiltrados = productosOriginales.filter((producto) =>
-      categoriasSeleccionadas.includes(producto.categoriaID.toString())
-    );
-    mostrarProductos(productosFiltrados);
-  } else {
-    // Si no hay categorías seleccionadas, mostramos todos los productos
-    mostrarProductos(productosOriginales);
+  // Función para obtener las categorías seleccionadas
+  function obtenerCategoriasSeleccionadas() {
+    const categoriasSeleccionadas = [];
+    document.querySelectorAll(".categoria:checked").forEach((checkbox) => {
+      categoriasSeleccionadas.push(checkbox.value); // Obtiene los valores de las categorías seleccionadas
+    });
+    return categoriasSeleccionadas;
   }
-}
 
-// Evento para aplicar filtros
-document
-  .querySelector(".apply-filters")
-  .addEventListener("click", filtrarProductosPorCategorias);
+  // Función para filtrar los productos según las categorías seleccionadas
+  function filtrarProductosPorCategorias() {
+    const categoriasSeleccionadas = obtenerCategoriasSeleccionadas();
 
-// Cargar todos los productos al principio cuando se carga la página
-document.addEventListener("DOMContentLoaded", cargarProductos);
+    if (categoriasSeleccionadas.length > 0) {
+      const productosFiltrados = productosOriginales.filter((producto) =>
+        categoriasSeleccionadas.includes(producto.categoriaID.toString())
+      );
+      mostrarProductos(productosFiltrados); // Muestra solo los productos filtrados
+    } else {
+      mostrarProductos(productosOriginales); // Si no hay filtros, muestra todos los productos
+    }
+  }
+
+  // Evento del botón "Aplicar Filtros"
+  document
+    .querySelector(".apply-filters")
+    .addEventListener("click", filtrarProductosPorCategorias);
+
+  // Cargar productos al cargar la página
+  cargarProductos();
+});
