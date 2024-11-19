@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agrodelis</title>
-    <link rel="shortcut icon" type="image/png" href="Img/Logo.ico"/>
+    <link rel="shortcut icon" type="image/png" href="Img/Logo.ico" />
   </head>
   <body>
-    
-      <div id="navbar-container"></div>
-      
+    <div id="navbar-container"></div>
+
     <script>
       function cargarNavbar() {
         fetch("navbar.html")
@@ -24,7 +23,8 @@
           })
           .catch((err) => console.error("error;", err));
       }
-      window.onload = cargarNavbar;
+      window.addEventListener("load", cargarNavbar);
     </script>
+    <script src="javascript/index.js"></script>
   </body>
 </html>

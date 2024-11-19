@@ -14,26 +14,10 @@
       <h3>Ubicación de Merca Panamá</h3>
       <div id="map"></div>
     </div>
-
-    <script>
-      function cargarNavbar() {
-        fetch("navbar.html")
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Error de red " + response.status);
-            }
-            return response.text();
-          })
-          .then((data) => {
-            document.getElementById("navbar-container").innerHTML = data;
-          })
-          .catch((err) => console.error("error;", err));
-      }
-      window.onload = cargarNavbar;
-    </script>
-
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
+<script src="../javascript/Ordenar.js"></script>
+   
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
       var map = L.map("map").setView(
         [9.033868734790088, -79.57669250534278],
         13
@@ -49,5 +33,6 @@
         .bindPopup("<b>Merca Panamá</b><br>Vía Centenario")
         .openPopup();
     </script>
+    
   </body>
 </html>

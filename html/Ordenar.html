@@ -4,27 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agrodelis</title>
-    <link rel="shortcut icon" type="image/png" href="Img/Logo.ico"/>
+    <link rel="shortcut icon" type="image/png" href="Img/Logo.ico" />
+    <link rel="stylesheet" href="../css/Ordenar.css" />
   </head>
   <body>
     <div id="navbar-container"></div>
-    
-    <img src="../Img/Carnes/Cerdo.jpg" alt="">
-    <script>
-      function cargarNavbar() {
-        fetch("navbar.html")
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Error de red " + response.status);
-            }
-            return response.text();
-          })
-          .then((data) => {
-            document.getElementById("navbar-container").innerHTML = data;
-          })
-          .catch((err) => console.error("error;", err));
-      }
-      window.onload = cargarNavbar;
-    </script>
+    <div class="contenedor">
+      <h1>Lista de Productos</h1>
+      <!-- Contenedor para los productos -->
+      <div id="productos-container"></div>
+    </div>
+
+    <script src="../javascript/Ordenar.js"></script>
   </body>
 </html>

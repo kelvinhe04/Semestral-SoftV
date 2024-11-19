@@ -7,7 +7,7 @@
 }
 .map-container{
     width: 100%;
-      padding: 0 20px;
+    padding: 0 20px;
 }
 #map {
   height: 600px; /* Cambia este valor según el tamaño que desees */
