@@ -12,12 +12,34 @@
 .navbar {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  margin-bottom: 45px;
+  flex-direction: column;
+  background-color: #45a049;
   
 }
+.navbar-superior{
+  background-color: #558A7A;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+.carrito{
+    background-color: #C5414B;
+
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+.navbar-inferior{
+  background-color: #1A2F2D;
+}
+
+
 .lista {
   width: 100%;
   margin-right: 100px;
@@ -40,8 +62,7 @@
   padding: 15px 20px;
 }
 .lista a {
-  color: rgb(0, 0, 0);
-  text-transform: uppercase;
+  color:#FFFFFF;
   text-decoration: none;
   padding: 10px 15px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -50,16 +71,16 @@
   font-weight: bold;
 }
 .lista a:hover {
-  color: #558a7a;
+  color: #C5414B;
 }
 .navbar-brand {
   transition: background-color 0.3s ease, color 0.3s ease;
-  color: rgb(0, 0, 0);
+  color:#FFFFFF;
   font-size: 1.8rem;
   text-decoration: none;
 }
 .navbar-brand:hover {
-  color: #558a7a;
+  color: #C5414B;
 }
 .search-container {
   display: flex;

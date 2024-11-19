@@ -14,11 +14,29 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="izquierda">
+      <div class="navbar-superior">
+
+         <div class="izquierda">
         <a class="navbar-brand" href="index.html">AgroDelis</a>
       </div>
 
-      <div class="derecha">
+      <div class="search-container">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscar..."
+            onkeyup="searchFunction()"
+          />
+          <button onclick="searchFunction()">Buscar</button>
+        </div>
+
+        <div class="carrito"> </div>
+
+
+      </div>
+     
+
+      <div class="navbar-inferior">
         <div class="lista">
           <ul>
             <li>
@@ -35,17 +53,13 @@
             </li>
           </ul>
         </div>
-        <div class="search-container">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Buscar..."
-            onkeyup="searchFunction()"
-          />
-          <button onclick="searchFunction()">Buscar</button>
-        </div>
+        
       </div>
     </nav>
+
+
+
+    
     <div id="searchResults"></div>
 
     <script src="javascript/script.js"></script>
