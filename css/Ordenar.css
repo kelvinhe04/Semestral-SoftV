@@ -7,16 +7,19 @@
 }
 .contenedor {
   margin: 0 auto 0;
-  width: 100%;
+  width: 90%;
   padding: 0 20px;
 }
 #productos-container {
-  display: flex;
-  gap: 23px;
+  display: flex; /* Usamos flexbox */
+  flex-wrap: wrap; /* Permite que las cartas se acomoden en múltiples líneas si es necesari*/
+  gap: 20px; /* Espacio entre los productos */
+  justify-content: flex-start; /* Alinea las cartas a la izquierda */
 }
 .producto .img img {
-  max-width: 200px; /* La imagen no será más ancha que 200px */
+  width: 200px; /* La imagen no será más ancha que 200px */
   height: 200px;
+ 
   object-fit: contain; /* Ajusta la imagen sin estirarla */
 }
 .producto .img {
@@ -24,12 +27,12 @@
 }
 
 .producto {
- 
   border-radius: 8px;
   padding: 16px;
-  width: 400px;
+  width: 260px;
   text-align: left;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);  /* Agrega una sombra */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
+    line-height: 1.5;
 }
 
 .producto h3 {
@@ -40,4 +43,108 @@
 .producto p {
   font-size: 14px;
   color: #555;
+}
+.btn {
+    margin-top: 15px;
+  width: 100%;
+  text-align: center;
+}
+.boton-enlace {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+  
+}
+
+.boton-enlace:hover {
+  background-color: #45a049;
+}
+h1{
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+
+/* Estilo para el contenedor del dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilo para el botón que abre el dropdown */
+.dropdown-btn {
+    background-color: #007bff; /* Fondo azul */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    text-align: center;
+}
+
+/* Estilo para el contenido del dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 220px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilo para el grupo de checkboxes */
+.checkbox-group {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+/* Estilo para cada checkbox */
+.checkbox-group label {
+    display: block;
+    margin: 5px 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Cambiar color de fondo cuando el mouse pasa sobre un label */
+.checkbox-group label:hover {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+/* Mostrar el contenido del dropdown cuando se hace clic en el botón */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Estilo para el botón de aplicar filtros */
+.apply-filters {
+    background-color: #28a745; /* Fondo verde */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Efecto de hover para el botón de aplicar filtros */
+.apply-filters:hover {
+    background-color: #218838;
 }
