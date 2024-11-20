@@ -13,12 +13,14 @@
   align-items: center;
   background-color: #558A7A;
   padding: 50px;
-  margin: 20px 40px;
+  margin: 30px 60px;
+  border-radius: 10px;
 }
 
 /* Contenido de texto */
 .text-content {
   max-width: 50%;
+  
 }
 
 .text-content h1 {
@@ -33,6 +35,7 @@
   color: white;
   margin-top: 20px;
   line-height: 1.6;
+  
 }
 
 /* Contenedor de imágenes */
@@ -65,16 +68,16 @@
   width: 80px;
   padding: 10px; /* Espacio adicional alrededor de la imagen */
   background-color: white; /* Fondo blanco */
-  border-radius: 15%;
+  border-radius: 10px;
   z-index: 3; /* Asegura que esté al frente */
 }
 
 .meat {
   bottom: 0; /* Posición inferior de la carne */
   left: -80px; /* Posición izquierda de la carne */
-  width: 70px;
-  padding: 10px; /* Espacio adicional alrededor de la imagen */
+  width: 110px;
+  padding: 10px 30px; /* Espacio adicional alrededor de la imagen */
   background-color: white; /* Fondo blanco */
-  border-radius: 15%;
+  border-radius: 10px;
   z-index: 3; /* Asegura que esté al frente */
 }

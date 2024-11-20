@@ -20,7 +20,7 @@
   background-color: #558A7A;
   display: flex;
   justify-content:space-between;
-  padding: 20px ;
+  padding: 20px  60px;
 }
 .carrito{
   background-color: #C5414B;
@@ -58,11 +58,13 @@
   margin: 0;
   list-style: none;
   display: flex;
-  display: flex;
-  justify-content: space-evenly;
+justify-content: center;
 }
 .navbar-inferior li {
-  padding: 15px 20px;
+  padding: 16px 20px;
+  margin: 0 80px;
+
+
 }
 .navbar-inferior a {
   color:#FFFFFF;
@@ -110,8 +112,10 @@
   cursor: pointer;
 }
 
-.search-container:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.fa-magnifying-glass{
+  color: #888;
+  font-size: 15px;
+  margin-right: 10px;
 }
 
 .search-input::placeholder {
