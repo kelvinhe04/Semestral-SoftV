@@ -1,3 +1,9 @@
+////////////////////////////////////////////////////////
+
+//NAVBAR//
+
+////////////////////////////////////////////////////////
+
 function cargarNavbar() {
   fetch("../html/navbar.html")
     .then((response) => {
@@ -13,6 +19,11 @@ function cargarNavbar() {
 }
 window.onload = cargarNavbar;
 
+////////////////////////////////////////////////////////
+
+//CONSUMO DE API, PARA MOSTRAR TODOS LOS PRODUCTOS//
+
+////////////////////////////////////////////////////////
 
 let productosOriginales = []; // Array para almacenar todos los productos
 
@@ -35,6 +46,11 @@ async function cargarProductos() {
     console.error("Error:", error);
   }
 }
+////////////////////////////////////////////////////////
+
+//MOSTRAR LOS PRODUCTOS DESPUES DE CONSUMIR LA API//
+
+////////////////////////////////////////////////////////
 
 // Función para mostrar productos en la página
 function mostrarProductos(productos) {
@@ -57,6 +73,11 @@ function mostrarProductos(productos) {
     contenedor.innerHTML += productoHTML;
   });
 }
+////////////////////////////////////////////////////////
+
+//DROPDOWN DE CATEGORIAS//
+
+////////////////////////////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", () => { 
   const dropdownBtn = document.querySelector(".dropdown-btn"); // Botón del dropdown
@@ -108,4 +129,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Cargar productos al cargar la página
   cargarProductos();
+});
+
+
+
+// Seleccionamos el botón y los checkboxes
+const eliminarChecksBtn = document.getElementById("btn-trash");
+const checkboxes = document.querySelectorAll(".categoria");
+
+// Añadimos un evento de click al botón
+eliminarChecksBtn.addEventListener("click", () => {
+  // Iteramos sobre todos los checkboxes y los desmarcamos
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = false;
+  });
 });

@@ -12,6 +12,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <!-- Incluir el archivo CSS de Flaticon desde su CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   </head>
   <body>
     <div id="navbar-container"></div>
@@ -20,43 +23,46 @@
         <div class="dropdown-btn""><a href=""></a>Categorías</div>
         <div class="dropdown-content">
           <div class="checkbox-group">
-  <label class="modern-checkbox">
-    <input type="checkbox" class="categoria" value="1" />
-    <span>Frutas</span>
-  </label>
-  <label class="modern-checkbox">
-    <input type="checkbox" class="categoria" value="2" />
-    <span>Verduras</span>
-  </label>
-  <label class="modern-checkbox">
-    <input type="checkbox" class="categoria" value="3" />
-    <span>Carnes</span>
-  </label>
-  <label class="modern-checkbox">
-    <input type="checkbox" class="categoria" value="4" />
-    <span>Mariscos</span>
-  </label>
-  <label class="modern-checkbox">
-    <input type="checkbox" class="categoria" value="5" />
-    <span>Pescado</span>
-  </label>
-  <label class="modern-checkbox">
-    <input type="checkbox" class="categoria" value="6" />
-    <span>Lácteos</span>
-  </label>
-  <label class="modern-checkbox">
-    <input type="checkbox" class="categoria" value="7" />
-    <span>Granos y Cereales</span>
-  </label>
-  <label class="modern-checkbox">
-    <input type="checkbox" class="categoria" value="8" />
-    <span>Especias y Condimentos</span>
-  </label>
-</div>
-          <button class="apply-filters">Aplicar Filtros</button>
+            <label class="modern-checkbox">
+              <input type="checkbox" class="categoria" value="1" />
+              <span>Frutas</span>
+            </label>
+            <label class="modern-checkbox">
+              <input type="checkbox" class="categoria" value="2" />
+              <span>Verduras</span>
+            </label>
+            <label class="modern-checkbox">
+              <input type="checkbox" class="categoria" value="3" />
+              <span>Carnes</span>
+            </label>
+            <label class="modern-checkbox">
+              <input type="checkbox" class="categoria" value="4" />
+              <span>Mariscos</span>
+            </label>
+            <label class="modern-checkbox">
+              <input type="checkbox" class="categoria" value="5" />
+              <span>Pescado</span>
+            </label>
+            <label class="modern-checkbox">
+              <input type="checkbox" class="categoria" value="6" />
+              <span>Lácteos</span>
+            </label>
+            <label class="modern-checkbox">
+              <input type="checkbox" class="categoria" value="7" />
+              <span>Granos y Cereales</span>
+            </label>
+            <label class="modern-checkbox">
+              <input type="checkbox" class="categoria" value="8" />
+              <span>Especias y Condimentos</span>
+            </label>
+          </div>
+
+          <div class="btn-container">
+            <button class="apply-filters">Aplicar</button>
+            <div id="btn-trash"><a href="#"><i class="fa-solid fa-trash-can"></i></a></div>
+          </div>          
         </div>
       </div>
-
       <h1>Lista de Productos</h1>
       <!-- Contenedor para los productos -->
       <div id="productos-container"></div>

@@ -1,3 +1,6 @@
+/* -------------------------------------------*/
+/* ----------------GENERAL-------------------*/
+/* -------------------------------------------*/
 * {
    font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -5,13 +8,19 @@
   font-size: 18px;
   box-sizing: border-box;
 }
+/* -------------------------------------------*/
+/* ----------------CONTENEDOR DEL BODY-------------------*/
+/* -------------------------------------------*/
 .contenedor {
   margin: 0 auto 0;
   width: 90%;
   padding: 0 20px;
 }
+/* -------------------------------------------*/
+/* ----------------PRODUTOS-------------------*/
+/* -------------------------------------------*/
 #productos-container {
-  display: flex; /* Usamos flexbox */
+  display: flex; 
   flex-wrap: wrap; /* Permite que las cartas se acomoden en múltiples líneas si es necesari*/
   gap: 20px; /* Espacio entre los productos */
   justify-content: flex-start; /* Alinea las cartas a la izquierda */
@@ -82,6 +91,7 @@ h1{
   font-size: 16px;
   border-radius: 8px;
   transition: background-color 0.3s;
+  cursor: pointer; /* Cambia el cursor a una mano cuando pasas por encima */
 
 }
 .dropdown-btn:hover{
@@ -139,6 +149,7 @@ h1{
 .modern-checkbox input[type="checkbox"]:checked {
   border-color: #4caf50;
   background-color: #4caf50;
+  color: #4caf50;
 }
 
 .modern-checkbox input[type="checkbox"]:checked::after {
@@ -146,8 +157,8 @@ h1{
   font-size: 14px;
   color: white;
   position: absolute;
-  top: 1px;
-  left: 5px;
+  top: 0;
+  left: 4px;
 }
 
 .modern-checkbox span {
@@ -155,12 +166,27 @@ h1{
   color: #333;
   transition: color 0.3s ease;
 }
-
-.modern-checkbox input[type="checkbox"]:checked + span {
-  color: #4caf50;
+.btn-container{
+    margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+ 
 }
+#btn-trash{
+   padding: 8px 16px;
+   background-color: #4caf50;
+   border-radius: 4px;
+  cursor: pointer;
+  color: white;
+}
+.fa-solid{
+  color: white;
+}
+
+
 .dropdown-content .apply-filters {
-  margin-top: 10px;
+
   padding: 8px 16px;
   background-color: #4caf50;
   color: white;
