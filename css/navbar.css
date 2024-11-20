@@ -36,6 +36,25 @@
   justify-content: center; /* Centrado horizontal */
   align-items: center;    /* Centrado vertical */
   gap: 5px;
+  position: relative;
+  cursor: pointer;
+
+
+}
+#contador-carrito {
+  position: absolute; 
+   top: -10px;
+  right: -10px;
+  background-color: #36b2eb;
+  color: white;
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  
+  
 }
 .carrito:hover{
     background-color: #ad3943;

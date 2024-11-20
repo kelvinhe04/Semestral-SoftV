@@ -53,6 +53,11 @@ async function cargarProductos() {
 ////////////////////////////////////////////////////////
 
 // Función para mostrar productos en la página
+
+// Variable para el contador del carrito
+let contadorCarrito = 0;
+
+
 function mostrarProductos(productos) {
   const contenedor = document.getElementById("productos-container");
   contenedor.innerHTML = ""; // Limpiar productos anteriores
@@ -67,11 +72,32 @@ function mostrarProductos(productos) {
         <p>Stock: ${producto.stock}</p>
         <p>Categoria: ${producto.categoriaNombre}</p>
         <p>Vendedor: ${producto.vendedorNombre}</p>
-        <div class="btn"><a href="#" class="boton-enlace">Añadir</a> </div>
+        <div class="btn add-to-cart-btn data-id="${producto.productoId}"><a href="#" class="boton-enlace">Añadir</a> </div>
       </div>
     `;
     contenedor.innerHTML += productoHTML;
   });
+
+  // Añadir eventos a los botones "Añadir al carrito" generados dinámicamente
+  const botonesAñadir = document.querySelectorAll(".add-to-cart-btn");
+  botonesAñadir.forEach((boton) => {
+    boton.addEventListener("click", () => {
+      contadorCarrito++;
+      actualizarContadorCarrito();
+    });
+  });
+}
+
+// Función para actualizar el contador del carrito
+function actualizarContadorCarrito() {
+  const contadorCarritoSpan = document.getElementById("contador-carrito");
+
+  if (contadorCarrito > 0) {
+    contadorCarritoSpan.textContent = contadorCarrito;
+    contadorCarritoSpan.style.display = "inline-flex"; // Mostrar contador
+  } else {
+    contadorCarritoSpan.style.display = "none"; // Ocultar contador
+  }
 }
 ////////////////////////////////////////////////////////
 
@@ -133,6 +159,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+////////////////////////////////////////////////////////
+
+//BOTON BASURA EN EL DROPDOWN DE CATEGORIAS//
+
+////////////////////////////////////////////////////////
+
 // Seleccionamos el botón y los checkboxes
 const eliminarChecksBtn = document.getElementById("btn-trash");
 const checkboxes = document.querySelectorAll(".categoria");
@@ -144,3 +177,8 @@ eliminarChecksBtn.addEventListener("click", () => {
     checkbox.checked = false;
   });
 });
+
+
+
+
+
