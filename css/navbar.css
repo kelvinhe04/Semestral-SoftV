@@ -78,8 +78,9 @@
 .navbar-brand {
   transition: background-color 0.3s ease, color 0.3s ease;
   color:#FFFFFF;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   text-decoration: none;
+  font-family: 'Lexend Giga', sans-serif;
 }
 .navbar-brand:hover {
   color: #C5414B;
