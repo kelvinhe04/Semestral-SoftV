@@ -11,10 +11,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e9f5eb;
+  background-color: #558A7A;
   padding: 50px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 40px;
 }
 
 /* Contenido de texto */
@@ -24,14 +23,14 @@
 
 .text-content h1 {
   font-size: 3rem;
-  color: #003200;
+  color: white;
   line-height: 1.3;
   font-weight: 700;
 }
 
 .text-content p {
   font-size: 1.2rem;
-  color: #4f4f4f;
+  color: white;
   margin-top: 20px;
   line-height: 1.6;
 }
@@ -46,9 +45,13 @@
 }
 
 .main-character {
-  width: 250px;
-  height: auto;
+  width: 300px; /* Aumenta el ancho para hacer la imagen más grande */
+  height: auto; /* Mantiene las proporciones */
   z-index: 2;
+  transform: scale(1.4); /* Escala la imagen sin afectar el contenedor */
+  transform-origin: center; /* Mantiene el punto de escala centrado */
+  position: relative; /* Permite mover la imagen */
+  top: -20px; /* Mueve la imagen hacia arriba (ajusta según necesidad) */
 }
 
 .floating-image {
@@ -57,13 +60,21 @@
 }
 
 .salad {
-  top: -20px;
-  right: 80px;
+  top: 70px; /* Posición superior de la ensalada */
+  right: 5px; /* Posición derecha de la ensalada */
   width: 80px;
+  padding: 10px; /* Espacio adicional alrededor de la imagen */
+  background-color: white; /* Fondo blanco */
+  border-radius: 15%;
+  z-index: 3; /* Asegura que esté al frente */
 }
 
 .meat {
-  bottom: 10px;
-  left: 70px;
+  bottom: 0; /* Posición inferior de la carne */
+  left: -80px; /* Posición izquierda de la carne */
   width: 70px;
+  padding: 10px; /* Espacio adicional alrededor de la imagen */
+  background-color: white; /* Fondo blanco */
+  border-radius: 15%;
+  z-index: 3; /* Asegura que esté al frente */
 }
