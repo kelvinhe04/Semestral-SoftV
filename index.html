@@ -17,22 +17,7 @@
   <body>
     <div id="navbar-container"></div>
 
-    <script>
-      function cargarNavbar() {
-        fetch("navbar.html")
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Error de red " + response.status);
-            }
-            return response.text();
-          })
-          .then((data) => {
-            document.getElementById("navbar-container").innerHTML = data;
-          })
-          .catch((err) => console.error("error;", err));
-      }
-      window.addEventListener("load", cargarNavbar);
-    </script>
+  
     <script src="javascript/index.js"></script>
     <!--Nose-->
     <div class="banner">
