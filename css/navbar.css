@@ -24,26 +24,31 @@
 }
 .carrito{
   background-color: #C5414B;
-  color: white;
   padding: 10px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  
   border-radius: 25px;
   transition: background-color 0.3s;
-  display: flex;
-  justify-content: center; /* Centrado horizontal */
-  align-items: center;    /* Centrado vertical */
-  gap: 5px;
   position: relative;
   cursor: pointer;
 
 
 }
+.carrito a{
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;    /* Centrado vertical */
+  gap: 7px;
+  font-size: 16px;
+  
+}
 #contador-carrito {
   position: absolute; 
-   top: -10px;
+  top: -10px;
   right: -10px;
   background-color: #36b2eb;
   color: white;
