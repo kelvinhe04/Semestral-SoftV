@@ -57,6 +57,13 @@ async function cargarProductos() {
 // Variable para el contador del carrito
 let contadorCarrito = 0;
 
+function añadirProductoAlCarrito(producto) {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  carrito.push(producto); // Añadir el producto al carrito
+  localStorage.setItem("carrito", JSON.stringify(carrito)); // Guardar el carrito actualizado en localStorage
+  actualizarContadorCarrito(); // Actualizar el contador en la interfaz
+}
+
 function mostrarProductos(productos) {
   const contenedor = document.getElementById("productos-container");
   contenedor.innerHTML = ""; // Limpiar productos anteriores
@@ -71,7 +78,7 @@ function mostrarProductos(productos) {
         <p>Stock: ${producto.stock}</p>
         <p>Categoria: ${producto.categoriaNombre}</p>
         <p>Vendedor: ${producto.vendedorNombre}</p>
-        <div class="btn add-to-cart-btn data-id="${producto.productoId}"><a href="#" class="boton-enlace">Añadir</a> </div>
+        <div class="btn add-to-cart-btn data-id="${producto.productoId}" data-nombre="${producto.nombre}" data-precio="${producto.precio}" data-stock="${producto.stock}"data-rutaImagen="${producto.rutaImagen}"><a href="#" class="boton-enlace">Añadir</a> </div>
       </div>
     `;
     contenedor.innerHTML += productoHTML;
@@ -80,24 +87,43 @@ function mostrarProductos(productos) {
   // Añadir eventos a los botones "Añadir al carrito" generados dinámicamente
   const botonesAñadir = document.querySelectorAll(".add-to-cart-btn");
   botonesAñadir.forEach((boton) => {
-    boton.addEventListener("click", () => {
-      contadorCarrito++;
-      actualizarContadorCarrito();
+    boton.addEventListener("click", (e) => {
+      const producto = {
+        productoId: boton.getAttribute("data-id"),
+        nombre: boton.getAttribute("data-nombre"),
+        precio: boton.getAttribute("data-precio"),
+        stock: boton.getAttribute("data-stock"),
+        rutaImagen: boton.getAttribute("data-rutaImagen"),
+      };
+
+      añadirProductoAlCarrito(producto);
     });
   });
 }
 
-// Función para actualizar el contador del carrito
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  actualizarContadorCarrito(); // Sincroniza el contador al cargar
+});
+
+
+
 function actualizarContadorCarrito() {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const contadorCarritoSpan = document.getElementById("contador-carrito");
 
-  if (contadorCarrito > 0) {
-    contadorCarritoSpan.textContent = contadorCarrito;
-    contadorCarritoSpan.style.display = "inline-flex"; // Mostrar contador
+  if (carrito.length > 0) {
+    contadorCarritoSpan.textContent = carrito.length; // Muestra el número de productos
+    contadorCarritoSpan.style.display = "inline-flex"; // Mostrar el contador
   } else {
-    contadorCarritoSpan.style.display = "none"; // Ocultar contador
+    contadorCarritoSpan.style.display = "none"; // Ocultar si no hay productos
   }
 }
+
+
+
+
 ////////////////////////////////////////////////////////
 
 //DROPDOWN DE CATEGORIAS//

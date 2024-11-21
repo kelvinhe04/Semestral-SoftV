@@ -8,7 +8,21 @@
   box-sizing: border-box;
 }
 
-
+#contador-carrito {
+  position: absolute; 
+  top: -10px;
+  right: -10px;
+  background-color: #36b2eb;
+  color: white;
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
 /*============= scroll bar==================*/
 ::-webkit-scrollbar {
   width: 15px;
