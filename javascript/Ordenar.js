@@ -51,22 +51,42 @@ async function cargarProductos() {
 }
 ////////////////////////////////////////////////////////
 
+//PASAR LOS PRODUCTOS DE ORDERNAR.HTML A CARRITO.HTML//
+
+////////////////////////////////////////////////////////
+
+
+// Función para añadir un producto al carrito
+function añadirProductoAlCarrito(producto) {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  // Verificar si el producto ya existe en el carrito
+  const indexProductoExistente = carrito.findIndex(item => item.productoId === producto.productoId);
+
+  if (indexProductoExistente !== -1) {
+    // Si el producto ya existe, solo aumentamos la cantidad
+    carrito[indexProductoExistente].cantidad += 1;
+  } else {
+    // Si el producto no existe, lo añadimos con cantidad 1
+    producto.cantidad = 1;
+    carrito.push(producto);
+  }
+
+  // Guardar el carrito actualizado en localStorage
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  // Actualizar el contador y el subtotal
+  actualizarContadorCarrito();
+
+}
+localStorage.clear(); // Elimina todos los datos guardados en localStorage
+////////////////////////////////////////////////////////
+
 //MOSTRAR LOS PRODUCTOS DESPUES DE CONSUMIR LA API//
 
 ////////////////////////////////////////////////////////
 
 // Función para mostrar productos en la página
-
-// Variable para el contador del carrito
-let contadorCarrito = 0;
-
-function añadirProductoAlCarrito(producto) {
-  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  carrito.push(producto); // Añadir el producto al carrito
-  localStorage.setItem("carrito", JSON.stringify(carrito)); // Guardar el carrito actualizado en localStorage
-  actualizarContadorCarrito(); // Actualizar el contador en la interfaz
-}
-
 function mostrarProductos(productos) {
   const contenedor = document.getElementById("productos-container");
   contenedor.innerHTML = ""; // Limpiar productos anteriores
@@ -79,23 +99,32 @@ function mostrarProductos(productos) {
         <p>${producto.descripcion}</p>
         <p>Precio: $${producto.precio}</p>
         <p>Stock: ${producto.stock}</p>
-        <p>Categoria: ${producto.categoriaNombre}</p>
-        <p>Vendedor: ${producto.vendedorNombre}</p>
-        <div class="btn add-to-cart-btn data-id="${producto.productoId}" data-nombre="${producto.nombre}" data-precio="${producto.precio}" data-stock="${producto.stock}"data-rutaImagen="${producto.rutaImagen}"><a href="#" class="boton-enlace">Añadir</a> </div>
+        <div 
+          class="btn add-to-cart-btn" 
+          data-id="${producto.productoId}" 
+          data-nombre="${producto.nombre}" 
+          data-descripcion="${producto.descripcion}" 
+          data-precio="${producto.precio}" 
+          data-stock="${producto.stock}" 
+          data-rutaImagen="${producto.rutaImagen}">
+          <a href="#" class="boton-enlace">Añadir</a> 
+        </div>
       </div>
     `;
     contenedor.innerHTML += productoHTML;
   });
 
-  // Añadir eventos a los botones "Añadir al carrito" generados dinámicamente
+  // Añadir eventos a los botones "Añadir al carrito"
   const botonesAñadir = document.querySelectorAll(".add-to-cart-btn");
   botonesAñadir.forEach((boton) => {
     boton.addEventListener("click", (e) => {
+      e.preventDefault();
       const producto = {
         productoId: boton.getAttribute("data-id"),
         nombre: boton.getAttribute("data-nombre"),
-        precio: boton.getAttribute("data-precio"),
-        stock: boton.getAttribute("data-stock"),
+        descripcion: boton.getAttribute("data-descripcion"),
+        precio: parseFloat(boton.getAttribute("data-precio")),
+        stock: parseInt(boton.getAttribute("data-stock")),
         rutaImagen: boton.getAttribute("data-rutaImagen"),
       };
 
@@ -107,14 +136,21 @@ function mostrarProductos(productos) {
 
 
 
-localStorage.clear(); // Elimina todos los datos guardados en localStorage
 
+
+
+
+
+
+
+// Función para actualizar el contador de productos
 function actualizarContadorCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const contadorCarritoSpan = document.getElementById("contador-carrito");
 
   if (carrito.length > 0) {
-    contadorCarritoSpan.textContent = carrito.length; // Muestra el número de productos
+    const totalProductos = carrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+    contadorCarritoSpan.textContent = totalProductos; // Muestra el total de productos
     contadorCarritoSpan.style.display = "inline-flex"; // Mostrar el contador
   } else {
     contadorCarritoSpan.style.display = "none"; // Ocultar si no hay productos
