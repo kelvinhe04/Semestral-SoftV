@@ -13,8 +13,9 @@
 /* -------------------------------------------*/
 .contenedor {
   margin: 0 auto 0;
-  width: 90%;
+  width: 80%;
   padding: 0 20px;
+ 
 }
 /* -------------------------------------------*/
 /* ----------------PRODUTOS-------------------*/
@@ -22,13 +23,12 @@
 #productos-container {
   display: flex; 
   flex-wrap: wrap; /* Permite que las cartas se acomoden en múltiples líneas si es necesari*/
-  gap: 20px; /* Espacio entre los productos */
-  justify-content: flex-start; /* Alinea las cartas a la izquierda */
+  gap: 19px;
+  justify-content:flex-start; /* Alinea las cartas a la izquierda */
 }
 .producto .img img {
   width: 200px; /* La imagen no será más ancha que 200px */
   height: 200px;
- 
   object-fit: contain; /* Ajusta la imagen sin estirarla */
 }
 .producto .img {
@@ -70,11 +70,12 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s;
   
+} 
+.boton-enlace:hover{
+  background-color: #436d60;
 }
 
-.boton-enlace:hover {
-  background-color: #45a049;
-}
+
 h1{
     margin-bottom: 15px;
     font-size: 1.5rem;
@@ -147,9 +148,9 @@ h1{
 }
 
 .modern-checkbox input[type="checkbox"]:checked {
-  border-color: #4caf50;
-  background-color: #4caf50;
-  color: #4caf50;
+  border-color: #558A7A;
+  background-color: #558A7A;
+  
 }
 
 .modern-checkbox input[type="checkbox"]:checked::after {
@@ -167,18 +168,22 @@ h1{
   transition: color 0.3s ease;
 }
 .btn-container{
-    margin-top: 10px;
+  margin-top: 10px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
  
 }
 #btn-trash{
    padding: 8px 16px;
-   background-color: #4caf50;
+   background-color: #C5414B;
    border-radius: 4px;
   cursor: pointer;
   color: white;
+   transition: background-color 0.3s ease;
+}
+#btn-trash:hover{
+background-color: #ad3943;
 }
 .fa-solid{
   color: white;
@@ -186,18 +191,18 @@ h1{
 
 
 .dropdown-content .apply-filters {
-
   padding: 8px 16px;
-  background-color: #4caf50;
+  background-color: #558A7A;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+   transition: background-color 0.3s ease;
   
 }
 
 .dropdown-content .apply-filters:hover {
-  background-color: #45a049;
+  background-color: #436d60;
 }
 
 /* Mostrar dropdown cuando tenga la clase 'show' */

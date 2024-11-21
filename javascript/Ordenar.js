@@ -14,10 +14,13 @@ function cargarNavbar() {
     })
     .then((data) => {
       document.getElementById("navbar-container").innerHTML = data;
+      actualizarContadorCarrito(); // Llamar después de cargar el navbar
     })
-    .catch((err) => console.error("error;", err));
+    .catch((err) => console.error("Error:", err));
 }
+
 window.onload = cargarNavbar;
+
 
 ////////////////////////////////////////////////////////
 
@@ -103,11 +106,8 @@ function mostrarProductos(productos) {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  actualizarContadorCarrito(); // Sincroniza el contador al cargar
-});
 
-
+localStorage.clear(); // Elimina todos los datos guardados en localStorage
 
 function actualizarContadorCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];

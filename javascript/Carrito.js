@@ -8,10 +8,13 @@ function cargarNavbar() {
     })
     .then((data) => {
       document.getElementById("navbar-container").innerHTML = data;
+      actualizarContadorCarrito(); // Llamar después de cargar el navbar
     })
-    .catch((err) => console.error("error;", err));
+    .catch((err) => console.error("Error:", err));
 }
+
 window.onload = cargarNavbar;
+
 
 
 
@@ -37,7 +40,8 @@ function cargarCarrito() {
   const contenedorCarrito = document.getElementById("carrito-container");
 
   if (carrito.length === 0) {
-    contenedorCarrito.innerHTML = "<p>El carrito está vacío.</p>";
+contenedorCarrito.innerHTML =
+  '<p class="indicador-vacio">El carrito está vacío.</p>';
     return;
   }
 

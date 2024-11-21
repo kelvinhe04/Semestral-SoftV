@@ -8,6 +8,12 @@
   box-sizing: border-box;
 }
 
+.contenedor {
+  margin: 0 auto 0;
+  width: 90%;
+  padding: 0 20px;
+}
+/*============= NOTIFICACION DEL NAVBAR DEL CARRITO==================*/
 #contador-carrito {
   position: absolute; 
   top: -10px;
@@ -23,6 +29,20 @@
   
   
 }
+/*============= scroll bar==================*/
+#carrito-container{
+  width: 100%;
+  background-color: #558A7A;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px 0;
+}
+
+.indicador-vacio{
+font-size: 2rem;
+}
+
+
 /*============= scroll bar==================*/
 ::-webkit-scrollbar {
   width: 15px;
