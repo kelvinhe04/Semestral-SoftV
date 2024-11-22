@@ -34,26 +34,7 @@
           <img src="Img/idx/carne.png" alt="Carne" class="floating-image meat">
       </div>   
   </div>
-  <script>
 
-
-function cargarNavbar() {
-  fetch("navbar.html")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error de red " + response.status);
-      }
-      return response.text();
-    })
-    .then((data) => {
-      document.getElementById("navbar-container").innerHTML = data;
-      actualizarContadorCarrito(); // Llamar después de cargar el navbar
-    })
-    .catch((err) => console.error("Error:", err));
-}
-
-window.onload = cargarNavbar;
-  </script>
   <script src="javascript/index.js"></script>
   </body>
 </html>
