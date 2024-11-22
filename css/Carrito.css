@@ -99,11 +99,11 @@
   color: #78b3e4;
 }
 
-.izquierda {
+.izquierda-seccionador {
   width: 80%;
   
 }
-.derecha {
+.derecha-seccionador {
   width: 20%;
   position: relative;
   

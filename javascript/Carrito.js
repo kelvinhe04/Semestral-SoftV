@@ -108,13 +108,13 @@ function cargarCarrito() {
           <img src="${producto.rutaImagen}" alt="${producto.nombre}" />
         </div>
         <div class="seccionador">  
-          <div class="izquierda">  
+          <div class="izquierda-seccionador">  
             <h3>${producto.nombre}</h3>
             <p>${producto.descripcion}</p>
             <p>Precio: $${producto.precio}</p>
             <p>Stock: ${producto.stock}</p>
           </div>
-          <div class="derecha"> 
+          <div class="derecha-seccionador"> 
             <div class="incrementar"> 
               <div id="btn-trash">
                 <a href="#"><i class="fa-solid fa-trash-can"></i></a>
