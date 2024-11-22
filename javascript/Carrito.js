@@ -153,34 +153,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Función para vaciar todo el carrito
 function borrarTodoCarrito() {
-  // Eliminar todo el carrito de localStorage
+  // Obtener el carrito actual de localStorage
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  localStorage.removeItem("carrito");
 
-  // Sincronizar con la base de datos o API
-  actualizarProductoEnAPI([]);
+  // Verificar si hay productos en el carrito
+  if (carrito.length === 0) {
+    console.log("El carrito ya está vacío.");
+    return; // No hay necesidad de sincronizar con la API si ya está vacío
+  }
 
-  // Mostrar un mensaje en la consola
-  console.log("El carrito se ha vaciado y se ha sincronizado con la base de datos.");
+  // Sincronizar con la base de datos o API primero
+  actualizarProductoEnAPI(carrito)
+    .then(() => {
+      // Eliminar todo el carrito de localStorage después de la sincronización exitosa
+      localStorage.removeItem("carrito");
 
-  // Recargar el contenido del carrito (debería mostrarse vacío)
-  cargarCarrito();
+      // Mostrar un mensaje en la consola
+      console.log("El carrito se ha vaciado y se ha sincronizado con la base de datos.");
+
+      // Recargar el contenido del carrito (debería mostrarse vacío)
+      cargarCarrito();
+    })
+    .catch((error) => {
+      console.error("Error al sincronizar con la API:", error);
+    });
 }
 
 // Función para sincronizar los productos con la API
 function actualizarProductoEnAPI(carrito) {
-  fetch("https://localhost:7156/api/Productos/update", {
-    method: "POST", // Puedes usar DELETE si tu API soporta esa acción
+  return fetch("https://localhost:7156/api/Productos/update", {
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      productos: carrito, // Enviamos el carrito vacío
-    }),
+    body: JSON.stringify(
+      carrito.map((producto) => ({
+        ProductoId: producto.productoId,
+        Cantidad: producto.cantidad, // Aquí debe ir la cantidad que quieres eliminar, no el stock
+      }))
+    ),
   })
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error en la sincronización con la API");
+      }
+      return response.json(); // Procesar la respuesta de la API
+    })
     .then((data) => {
-      console.log("Sincronización con la API exitosa:", data);  
+      console.log("Sincronización con la API exitosa:", data);
     })
     .catch((error) => {
       console.error("Error al sincronizar con la API:", error);
