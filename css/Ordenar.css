@@ -13,7 +13,7 @@
 /* -------------------------------------------*/
 .contenedor {
   margin: 0 auto 0;
-  width: 80%;
+  width: 85%;
   padding: 0 20px;
 
  
@@ -26,6 +26,7 @@
   flex-wrap: wrap; /* Permite que las cartas se acomoden en múltiples líneas si es necesari*/
   gap: 19px;
   justify-content:flex-start; /* Alinea las cartas a la izquierda */
+
 }
 .producto .img img {
   width: 200px; /* La imagen no será más ancha que 200px */

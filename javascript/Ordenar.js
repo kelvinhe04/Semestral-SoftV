@@ -77,7 +77,6 @@ function añadirProductoAlCarrito(producto) {
 
   // Actualizar el contador y el subtotal
   actualizarContadorCarrito();
-
 }
 localStorage.clear(); // Elimina todos los datos guardados en localStorage
 ////////////////////////////////////////////////////////
@@ -128,10 +127,17 @@ function mostrarProductos(productos) {
         rutaImagen: boton.getAttribute("data-rutaImagen"),
       };
 
+      // Verificar si el stock es 0
+      if (producto.stock <= 0) {
+        alert(`El producto "${producto.nombre}" no está disponible.`);
+        return; // No añadir el producto al carrito
+      }
+
       añadirProductoAlCarrito(producto);
     });
   });
 }
+
 
 
 

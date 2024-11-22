@@ -102,8 +102,10 @@ function cargarCarrito() {
 
   // Mostrar cada producto una sola vez con su cantidad
   Object.values(productosAgrupados).forEach((producto) => {
+    const esUnico = producto.cantidad === 1; // Verificar si la cantidad es 1
+
     const productoHTML = `
-      <div class="producto">
+      <div class="producto" data-id="${producto.productoId}">
         <div class="img">
           <img src="${producto.rutaImagen}" alt="${producto.nombre}" />
         </div>
@@ -116,22 +118,109 @@ function cargarCarrito() {
           </div>
           <div class="derecha-seccionador"> 
             <div class="incrementar"> 
-              <div id="btn-trash">
-                <a href="#"><i class="fa-solid fa-trash-can"></i></a>
-              </div>
+              
+                ${
+                  esUnico
+                    ? `<a href="#" class="btn-trash"><i class="fa-solid fa-trash-can"></i></a>`
+                    : ""
+                }
+                ${
+                  esUnico
+                    ? ""
+                    : `<a href="#" class="minus"><i class="fa-solid fa-minus"></i></a>`
+                }
+              
               <div id="cantidad-container">
                 <h3>${producto.cantidad}</h3> <!-- Mostrar la cantidad -->
               </div>
-              <div class="signo-mas">
-                <img src="../Img/Iconos/plus.png" alt="Plus Icon" />
-              </div>
+              
+                
+                <a href="#" class="plus"><i class="fa-solid fa-plus"></i></a>
+              
             </div>
           </div>
         </div>
       </div>
     `;
     contenedorCarrito.insertAdjacentHTML("beforeend", productoHTML); // Agregar el producto al carrito
+
+    // Agregar interactividad a los botones
+    agregarEventos(producto.productoId, producto.cantidad);
   });
+}
+
+// Función para agregar eventos a los botones de cantidad
+function agregarEventos(productoId, cantidad) {
+  // Evento para el botón de eliminación (Basura)
+  const btnTrash = document.querySelector(
+    `[data-id="${productoId}"] .btn-trash`
+  );
+  if (btnTrash) {
+    btnTrash.addEventListener("click", (e) => {
+      e.preventDefault();
+      eliminarProductoDelCarrito(productoId);
+       actualizarContadorCarrito();
+       actualizarSubtotal();
+    });
+  }
+  // Evento para disminuir la cantidad
+  if (cantidad > 1) {
+    const btnMinus = document.querySelector(`[data-id="${productoId}"] .minus`);
+    if (btnMinus) {
+      btnMinus.addEventListener("click", (e) => {
+        e.preventDefault();
+        actualizarCantidadProducto(productoId, -1);
+        actualizarContadorCarrito();
+        actualizarSubtotal();
+      });
+    }
+  }
+
+  // Evento para aumentar la cantidad
+  const btnPlus = document.querySelector(`[data-id="${productoId}"] .plus`);
+  if (btnPlus) {
+    btnPlus.addEventListener("click", (e) => {
+      e.preventDefault();
+      actualizarCantidadProducto(productoId, 1);
+      actualizarContadorCarrito();
+      actualizarSubtotal();
+    });
+  }
+}
+// Función para actualizar la cantidad de un producto en el carrito
+function actualizarCantidadProducto(productoId, cantidad) {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  // Buscar el producto en el carrito
+  const producto = carrito.find(producto => producto.productoId === productoId);
+  if (producto) {
+    // Actualizar la cantidad
+    producto.cantidad += cantidad;
+
+    // Si la cantidad es 0 o menos, eliminar el producto
+    if (producto.cantidad <= 0) {
+      carrito = carrito.filter(prod => prod.productoId !== productoId);
+    }
+
+    // Guardar el carrito actualizado en localStorage
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    // Recargar el carrito para reflejar los cambios
+    cargarCarrito();
+  }
+}
+// Función para eliminar un producto del carrito
+function eliminarProductoDelCarrito(productoId) {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  // Filtrar el producto para eliminarlo del carrito
+  carrito = carrito.filter(producto => producto.productoId !== productoId);
+
+  // Guardar el carrito actualizado
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  // Recargar el carrito
+  cargarCarrito();
 }
 
   // Evento para el botón "Borrar todo"
@@ -140,7 +229,7 @@ function cargarCarrito() {
     botonBorrarTodo.addEventListener("click", borrarTodoCarrito);
   }
 
-console.log("ldkfjsl");
+
 
 
 
@@ -153,12 +242,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Función para vaciar todo el carrito
 function borrarTodoCarrito() {
+
+
   // Obtener el carrito actual de localStorage
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
   // Verificar si hay productos en el carrito
   if (carrito.length === 0) {
-    console.log("El carrito ya está vacío.");
+    // console.log("El carrito ya está vacío.");
     return; // No hay necesidad de sincronizar con la API si ya está vacío
   }
 
@@ -168,9 +259,8 @@ function borrarTodoCarrito() {
       // Eliminar todo el carrito de localStorage después de la sincronización exitosa
       localStorage.removeItem("carrito");
 
-      // Mostrar un mensaje en la consola
-      console.log("El carrito se ha vaciado y se ha sincronizado con la base de datos.");
-
+        actualizarContadorCarrito();
+        actualizarSubtotal();
       // Recargar el contenido del carrito (debería mostrarse vacío)
       cargarCarrito();
     })

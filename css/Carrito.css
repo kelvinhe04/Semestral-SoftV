@@ -31,7 +31,7 @@
 /*============= CHECKOUT  DEL CARRITO==================*/
 .contenedor-precio {
   width: auto;
-  height: 100px;
+  height: 130px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
   padding: 20px;
   border-radius: 10px;
@@ -139,7 +139,7 @@ background-color: #ad3943;
   bottom: 0;
   right: 0;
   border-radius: 25px;
-  width: 80px;
+  width: 90px;
   background-color: #91cbfa;
 }
 #cantidad-container {
@@ -148,15 +148,11 @@ background-color: #ad3943;
   justify-content: center; /* Centra horizontalmente el número */
   font-size: 18px;
 }
-.signo-mas {
-  display: flex; /* Aseguramos que el contenedor de la imagen sea flexible */
-  align-items: center; /* Centra verticalmente la imagen */
-  justify-content: center; /* Centra horizontalmente la imagen */
+.plus{
+  color: black;
 }
-.signo-mas img {
-  width: 14px;
-  height: 14px;
-  cursor: pointer; /* Añadir un cursor pointer para indicar que es clickeable */
+.minus{
+  color: black;
 }
 .fa-trash-can {
   font-size: 14px;
