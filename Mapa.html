@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AgroDelis</title>
-    <link rel="shortcut icon" type="image/png" href="Img/Iconos/Meat-logo.png" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="Img/Iconos/Meat-logo.png"
+    />
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="css/Mapa.css" />
-       <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -16,14 +20,21 @@
   </head>
   <body>
     <div id="navbar-container"></div>
+
     <div class="map-container">
-      <h3>Ubicación de Merca Panamá</h3>
+      <h1>Nuestra <br>ubicación</h1>
+      
+      <p>Encuentra fácilmente nuestro local y explora nuestras instalaciones.<br>¡Estamos más cerca de lo que imaginas! </p>
+     
       <div id="map"></div>
-    </div>
-<script src="javascript/Ordenar.js"></script>
-   
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script>
+      </div>
+      <div class="distribucion">ds</div>
+    
+
+    <script src="javascript/Ordenar.js"></script>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
       var map = L.map("map").setView(
         [9.033868734790088, -79.57669250534278],
         13
@@ -36,9 +47,8 @@
 
       L.marker([9.033868734790088, -79.57669250534278])
         .addTo(map)
-        .bindPopup("<b>Merca Panamá</b><br>Vía Centenario")
+        .bindPopup("<b>AgroDelis</b><br>Vía Centenario")
         .openPopup();
     </script>
-    
   </body>
 </html>

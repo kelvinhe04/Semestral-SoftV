@@ -6,12 +6,50 @@
   box-sizing: border-box;
 }
 .map-container{
-    width: 100%;
-    padding: 0 20px;
+    
+  margin: 0 auto 0;
+  width: 85%;
+  padding: 0 30px;
 }
 #map {
   height: 600px; /* Cambia este valor según el tamaño que desees */
   width: 100%;   /* Asegúrate de que el mapa ocupe todo el ancho de su contenedor */
+  border-radius: 10px;
     
 }
-/*Nose*/
+h1{
+  font-size: 3rem;
+  margin: 30px 0 30px;
+  
+}
+p{
+  margin-bottom: 30px;
+}
+.distribucion{
+  width: 100%;
+  display: block;
+  height: 100vh;
+  background-color: #A9BB9C;
+  margin-top: 50px;
+}
+
+/*============= scroll bar==================*/
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #2a2725;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #726c68;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #605a57;
+}

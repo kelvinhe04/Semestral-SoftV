@@ -118,3 +118,23 @@
   margin: 20px 0; /* Espaciado superior e inferior opcional */
 }
 
+/*============= scroll bar==================*/
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #2a2725;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #726c68;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #605a57;
+}
