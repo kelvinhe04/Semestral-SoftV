@@ -30,12 +30,27 @@
 }
 /*============= CHECKOUT  DEL CARRITO==================*/
 .contenedor-precio {
-  width: 20%;
+  width: auto;
   height: 100px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
   padding: 20px;
   border-radius: 10px;
   margin: 30px 0;
+}
+.btn-comprar{
+  margin-top: 12px;
+  background-color: #C5414B;
+  padding: 8px 25px;
+  text-align: center;
+  color: white;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+  position: relative;
+  cursor: pointer;
+
+}
+.btn-comprar:hover{
+background-color: #ad3943;
 }
 /*============= TODOS LOS PRODUCTOS DENTRO DEL CARRO==================*/
 #carrito-container {
@@ -51,6 +66,12 @@
 }
 #carrito-container.vacio {
   display: block; /* Cambiar el comportamiento cuando está vacío */
+}
+
+.btn-comprar a{
+  font-size: 16px;
+  color: white;
+    text-decoration: none;
 }
 .producto .img img {
   width: 200px; /* La imagen no será más ancha que 200px */

@@ -134,6 +134,23 @@ function cargarCarrito() {
   });
 }
 
+  // Evento para el botón "Borrar todo"
+  const botonBorrarTodo = document.getElementById("borrar-todo");
+  if (botonBorrarTodo) {
+    botonBorrarTodo.addEventListener("click", borrarTodoCarrito);
+  }
+
+
+
+// Función para borrar todo el carrito
+function borrarTodoCarrito() {
+  // Eliminar todo el carrito de localStorage
+  localStorage.removeItem("carrito");
+
+  // Recargar el carrito (se vaciará)
+  cargarCarrito();
+} 
+
 
 document.addEventListener("DOMContentLoaded", () => {
  
