@@ -140,16 +140,8 @@ function cargarCarrito() {
     botonBorrarTodo.addEventListener("click", borrarTodoCarrito);
   }
 
+console.log("ldkfjsl");
 
-
-// Función para borrar todo el carrito
-function borrarTodoCarrito() {
-  // Eliminar todo el carrito de localStorage
-  localStorage.removeItem("carrito");
-
-  // Recargar el carrito (se vaciará)
-  cargarCarrito();
-} 
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -157,3 +149,40 @@ document.addEventListener("DOMContentLoaded", () => {
   cargarCarrito();
   actualizarSubtotal();
 });
+
+
+// Función para vaciar todo el carrito
+function borrarTodoCarrito() {
+  // Eliminar todo el carrito de localStorage
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  localStorage.removeItem("carrito");
+
+  // Sincronizar con la base de datos o API
+  actualizarProductoEnAPI([]);
+
+  // Mostrar un mensaje en la consola
+  console.log("El carrito se ha vaciado y se ha sincronizado con la base de datos.");
+
+  // Recargar el contenido del carrito (debería mostrarse vacío)
+  cargarCarrito();
+}
+
+// Función para sincronizar los productos con la API
+function actualizarProductoEnAPI(carrito) {
+  fetch("https://localhost:7156/api/Productos/update", {
+    method: "POST", // Puedes usar DELETE si tu API soporta esa acción
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      productos: carrito, // Enviamos el carrito vacío
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Sincronización con la API exitosa:", data);  
+    })
+    .catch((error) => {
+      console.error("Error al sincronizar con la API:", error);
+    });
+}
