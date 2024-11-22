@@ -21,7 +21,6 @@ function cargarNavbar() {
 
 window.onload = cargarNavbar;
 
-
 ////////////////////////////////////////////////////////
 
 //CONSUMO DE API, PARA MOSTRAR TODOS LOS PRODUCTOS//
@@ -55,13 +54,14 @@ async function cargarProductos() {
 
 ////////////////////////////////////////////////////////
 
-
 // Función para añadir un producto al carrito
 function añadirProductoAlCarrito(producto) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
   // Verificar si el producto ya existe en el carrito
-  const indexProductoExistente = carrito.findIndex(item => item.productoId === producto.productoId);
+  const indexProductoExistente = carrito.findIndex(
+    (item) => item.productoId === producto.productoId
+  );
 
   if (indexProductoExistente !== -1) {
     // Si el producto ya existe, solo aumentamos la cantidad
@@ -98,6 +98,8 @@ function mostrarProductos(productos) {
         <p>${producto.descripcion}</p>
         <p>Precio: $${producto.precio}</p>
         <p>Stock: ${producto.stock}</p>
+        <p>Categoria: ${producto.categoriaNombre}</p>
+        <p>Vendedor: ${producto.vendedorNombre}</p>
         <div 
           class="btn add-to-cart-btn" 
           data-id="${producto.productoId}" 
@@ -138,33 +140,22 @@ function mostrarProductos(productos) {
   });
 }
 
-
-
-
-
-
-
-
-
-
-
-
 // Función para actualizar el contador de productos
 function actualizarContadorCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const contadorCarritoSpan = document.getElementById("contador-carrito");
 
   if (carrito.length > 0) {
-    const totalProductos = carrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+    const totalProductos = carrito.reduce(
+      (acc, producto) => acc + producto.cantidad,
+      0
+    );
     contadorCarritoSpan.textContent = totalProductos; // Muestra el total de productos
     contadorCarritoSpan.style.display = "inline-flex"; // Mostrar el contador
   } else {
     contadorCarritoSpan.style.display = "none"; // Ocultar si no hay productos
   }
 }
-
-
-
 
 ////////////////////////////////////////////////////////
 
