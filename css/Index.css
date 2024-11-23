@@ -138,3 +138,37 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #605a57;
 }
+
+/*Metodos de pago*/
+.pago{
+  background-color: #A9BB9C;
+  padding: 20px;
+  margin: 20px;
+}
+
+.titulo{
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1A2F2D;
+}
+
+.metodos{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.metodo1 img{
+  width: 40px; /*ajustar tamaño imagen*/
+  height: 17px;
+  margin: 10px;
+}
+
+.metodo2 img{
+  width: 30px; /*ajustar tamaño imagen*/
+  height: 20px;
+  margin: 10px;
+}
