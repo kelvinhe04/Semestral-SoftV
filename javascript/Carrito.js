@@ -93,9 +93,9 @@ function actualizarSubtotal() {
   });
 
   // Actualizar el contenido del subtotal
-  subtotalSpan.textContent = `Subtotal (${totalProductos} producto${
+  subtotalSpan.innerHTML = `Subtotal (${totalProductos} producto${
     totalProductos !== 1 ? "s" : ""
-  }): $${subtotal.toFixed(2)}`;
+  })<br>$${subtotal.toFixed(2)}`;
 }
 
 function cargarCarrito() {
