@@ -7,6 +7,7 @@
   font-size: 18px;
   box-sizing: border-box;
 }
+/*============= CONTENERDOR DE LA PAGINA==================*/
 
 .contenedor {
   width: 85%;
@@ -49,9 +50,17 @@
   cursor: pointer;
 
 }
+/*============= BTN CHECKOUT  DEL CARRITO==================*/
+.btn-comprar a{
+  font-size: 16px;
+  color: white;
+    text-decoration: none;
+}
 .btn-comprar:hover{
 background-color: #ad3943;
 }
+
+
 /*============= TODOS LOS PRODUCTOS DENTRO DEL CARRO==================*/
 #carrito-container {
   width: 80%;
@@ -68,20 +77,8 @@ background-color: #ad3943;
   display: block; /* Cambiar el comportamiento cuando está vacío */
 }
 
-.btn-comprar a{
-  font-size: 16px;
-  color: white;
-    text-decoration: none;
-}
-.producto .img img {
-  width: 200px; /* La imagen no será más ancha que 200px */
-  height: 200px;
-  object-fit: contain; /* Ajusta la imagen sin estirarla */
-}
-.producto .img {
-  text-align: center; /* Alinea la imagen en el centro del contenedor */
-}
 
+/*============= TARJETAS DE LOS PRODUCTOS==================*/
 .producto {
   border-radius: 8px;
   padding: 16px;
@@ -91,39 +88,32 @@ background-color: #ad3943;
   line-height: 1.5;
   background-color: white;
 }
-
+.producto .img {
+  text-align: center; /* Alinea la imagen en el centro del contenedor */
+}
+.producto .img img {
+  width: 200px; /* La imagen no será más ancha que 200px */
+  height: 200px;
+  object-fit: contain; /* Ajusta la imagen sin estirarla */
+}
 .producto h3 {
   font-size: 18px;
   margin: 8px 0;
 }
-
 .producto p {
   font-size: 14px;
   color: #555;
 }
-
-.indicador-vacio {
-  color: white;
+/*============= IZQUIERDA(DESCRIPCION Y PRECIO PRODUCTO) Y DERECHA(BOTON DE INCREMENTAR Y DECREMENTAR)==================*/
+.seccionador {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
-.titulo {
-  margin-bottom: 10px;
-  font-size: 2rem;
-}
-
-.enlace-ordenar {
-  text-decoration: none;
-  color: #91cbfa;
-  transition: color 0.3s;
-}
-
-.enlace-ordenar:hover {
-  color: #78b3e4;
-}
-
 .izquierda-seccionador {
   width: 80%;
-  
 }
+
 .derecha-seccionador {
   width: 20%;
   position: relative;
@@ -142,11 +132,16 @@ background-color: #ad3943;
   width: 90px;
   background-color: #91cbfa;
 }
+
 #cantidad-container {
   display: flex;
   align-items: center; /* Centra verticalmente el número */
   justify-content: center; /* Centra horizontalmente el número */
   font-size: 18px;
+}
+#cantidad-container h3 {
+  display: block;
+  margin: 0; /* Elimina los márgenes por defecto */
 }
 .plus{
   color: black;
@@ -158,15 +153,29 @@ background-color: #ad3943;
   font-size: 14px;
   color: black;
 }
-#cantidad-container h3 {
-  display: block;
-  margin: 0; /* Elimina los márgenes por defecto */
+
+/*============= CUANDO NO HAY PRODUCTOS EN EL CARRO==================*/
+.indicador-vacio {
+  color: white;
 }
-.seccionador {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+.titulo {
+  margin-bottom: 10px;
+  font-size: 2rem;
 }
+.enlace-ordenar {
+  text-decoration: none;
+  color: #91cbfa;
+  transition: color 0.3s;
+}
+.enlace-ordenar:hover {
+  color: #78b3e4;
+}
+
+
+
+
+
+
 /*============= scroll bar==================*/
 ::-webkit-scrollbar {
   width: 15px;
