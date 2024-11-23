@@ -1,8 +1,14 @@
+////////////////////////////////////////////////////////
+
+//NAVBAR//
+
+////////////////////////////////////////////////////////
+
 function cargarNavbar() {
   fetch("../navbar.html")
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Error de red " + response.status);
+        throw new Error("Error al cargar navbar " + response.status);
       }
       return response.text();
     })
@@ -13,13 +19,39 @@ function cargarNavbar() {
     .catch((err) => console.error("Error:", err));
 }
 
-window.onload = cargarNavbar;
+////////////////////////////////////////////////////////
 
+//FOOTER//
 
+////////////////////////////////////////////////////////
 
+function cargarFooter() {
+  fetch("../Footer.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error al cargar footer " + response.status);
+      }
+      return response.text();
+    })
+    .then((data) => {
+      document.getElementById("footer-container").innerHTML = data;
+      actualizarContadorCarrito(); // Llamar después de cargar el navbar
+    })
+    .catch((err) => console.error("Error:", err));
+}
 
+////////////////////////////////////////////////////////
 
+//CARGAR FOOTER Y NAVBAR//
 
+////////////////////////////////////////////////////////
+
+function inicializar() {
+  cargarNavbar();
+  cargarFooter();
+}
+
+window.onload = inicializar;
 
 // Función para actualizar el contador de productos
 function actualizarContadorCarrito() {
@@ -39,9 +71,6 @@ function actualizarContadorCarrito() {
     contadorCarritoSpan.style.display = "none"; // Ocultar si no hay productos
   }
 }
-
-
-
 
 // Función para actualizar el subtotal
 function actualizarSubtotal() {
@@ -64,16 +93,10 @@ function actualizarSubtotal() {
   });
 
   // Actualizar el contenido del subtotal
-  subtotalSpan.textContent = `Subtotal (${totalProductos} producto${totalProductos !== 1 ? "s" : ""}): $${subtotal.toFixed(2)}`;
-
+  subtotalSpan.textContent = `Subtotal (${totalProductos} producto${
+    totalProductos !== 1 ? "s" : ""
+  }): $${subtotal.toFixed(2)}`;
 }
-
-
-
-
-
-
-
 
 function cargarCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || []; // Obtener el carrito desde localStorage
@@ -159,8 +182,8 @@ function agregarEventos(productoId, cantidad) {
     btnTrash.addEventListener("click", (e) => {
       e.preventDefault();
       eliminarProductoDelCarrito(productoId);
-       actualizarContadorCarrito();
-       actualizarSubtotal();
+      actualizarContadorCarrito();
+      actualizarSubtotal();
     });
   }
   // Evento para disminuir la cantidad
@@ -192,14 +215,16 @@ function actualizarCantidadProducto(productoId, cantidad) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
   // Buscar el producto en el carrito
-  const producto = carrito.find(producto => producto.productoId === productoId);
+  const producto = carrito.find(
+    (producto) => producto.productoId === productoId
+  );
   if (producto) {
     // Actualizar la cantidad
     producto.cantidad += cantidad;
 
     // Si la cantidad es 0 o menos, eliminar el producto
     if (producto.cantidad <= 0) {
-      carrito = carrito.filter(prod => prod.productoId !== productoId);
+      carrito = carrito.filter((prod) => prod.productoId !== productoId);
     }
 
     // Guardar el carrito actualizado en localStorage
@@ -214,7 +239,7 @@ function eliminarProductoDelCarrito(productoId) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
   // Filtrar el producto para eliminarlo del carrito
-  carrito = carrito.filter(producto => producto.productoId !== productoId);
+  carrito = carrito.filter((producto) => producto.productoId !== productoId);
 
   // Guardar el carrito actualizado
   localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -223,27 +248,19 @@ function eliminarProductoDelCarrito(productoId) {
   cargarCarrito();
 }
 
-  // Evento para el botón "Borrar todo"
-  const botonBorrarTodo = document.getElementById("borrar-todo");
-  if (botonBorrarTodo) {
-    botonBorrarTodo.addEventListener("click", borrarTodoCarrito);
-  }
-
-
-
-
+// Evento para el botón "Borrar todo"
+const botonBorrarTodo = document.getElementById("borrar-todo");
+if (botonBorrarTodo) {
+  botonBorrarTodo.addEventListener("click", borrarTodoCarrito);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
- 
   cargarCarrito();
   actualizarSubtotal();
 });
 
-
 // Función para vaciar todo el carrito
 function borrarTodoCarrito() {
-
-
   // Obtener el carrito actual de localStorage
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -259,8 +276,8 @@ function borrarTodoCarrito() {
       // Eliminar todo el carrito de localStorage después de la sincronización exitosa
       localStorage.removeItem("carrito");
 
-        actualizarContadorCarrito();
-        actualizarSubtotal();
+      actualizarContadorCarrito();
+      actualizarSubtotal();
       // Recargar el contenido del carrito (debería mostrarse vacío)
       cargarCarrito();
     })
