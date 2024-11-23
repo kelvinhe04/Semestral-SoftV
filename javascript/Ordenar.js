@@ -78,7 +78,7 @@ function añadirProductoAlCarrito(producto) {
   // Actualizar el contador y el subtotal
   actualizarContadorCarrito();
 }
-localStorage.clear(); // Elimina todos los datos guardados en localStorage
+
 ////////////////////////////////////////////////////////
 
 //MOSTRAR LOS PRODUCTOS DESPUES DE CONSUMIR LA API//

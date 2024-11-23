@@ -1,53 +1,46 @@
 /* styles.css */
 * {
-   font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   font-size: 18px;
   box-sizing: border-box;
 }
 
-
-
 .navbar {
   width: 100%;
   display: flex;
   flex-direction: column;
-  
-  
 }
-.navbar-superior{
-  background-color: #558A7A;
+.navbar-superior {
+  background-color: #558a7a;
   display: flex;
-  justify-content:space-between;
-  padding: 20px  60px;
+  justify-content: space-between;
+  padding: 20px 60px;
 }
-.carrito{
-  background-color: #C5414B;
+.carrito {
+  background-color: #c5414b;
   padding: 10px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  
+
   border-radius: 25px;
   transition: background-color 0.3s;
   position: relative;
   cursor: pointer;
-
-
 }
-.carrito a{
+.carrito a {
   text-decoration: none;
   color: white;
   display: flex;
   justify-content: center; /* Centrado horizontal */
-  align-items: center;    /* Centrado vertical */
+  align-items: center; /* Centrado vertical */
   gap: 7px;
   font-size: 16px;
-  
 }
 #contador-carrito {
-  position: absolute; 
+  position: absolute;
   top: -10px;
   right: -10px;
   background-color: #91cbfa;
@@ -58,19 +51,14 @@
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  
-  
 }
-.carrito:hover{
-    background-color: #ad3943;
+.carrito:hover {
+  background-color: #ad3943;
 }
-.navbar-inferior{
-  background-color: #1A2F2D;
+.navbar-inferior {
+  background-color: #1a2f2d;
   width: 100%;
-  
 }
-
-
 
 .derecha {
   display: flex;
@@ -82,39 +70,53 @@
   margin: 0;
   list-style: none;
   display: flex;
-justify-content: center;
+  justify-content: center;
 }
 .navbar-inferior li {
   padding: 16px 20px;
   margin: 0 80px;
-
-
 }
 .navbar-inferior a {
-  color:#FFFFFF;
+  color: #ffffff;
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 10px 0;
   transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 10px;
   font-weight: bold;
+  position: relative;
+
 }
-.navbar-inferior a:hover {
-  color: #C5414B;
+.navbar-inferior a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  left: 0;
+  bottom: 6px;
+  transform-origin: right;
+  transform: scale(0);
+  transition: transform .5s;
 }
+.navbar-inferior a:hover::after {
+  transform-origin: left;
+  transform: scale(1);
+}
+
 .navbar-brand {
   transition: background-color 0.3s ease, color 0.3s ease;
-  color:#FFFFFF;
+  color: #ffffff;
   font-size: 1.6rem;
   text-decoration: none;
-  font-family: 'Lexend Giga', sans-serif;
+  font-family: "Lexend Giga", sans-serif;
 }
 .navbar-brand:hover {
-  color: #C5414B;
+  color: #d4d2d2;
 }
 .search-container {
   display: flex;
   align-items: center;
-  background-color: #EAF1ED; /* Color del fondo del cuadro */
+  background-color: #eaf1ed; /* Color del fondo del cuadro */
   border-radius: 10px; /* Bordes redondeados */
   padding: 5px 10px;
   width: 300px;
@@ -136,7 +138,7 @@ justify-content: center;
   cursor: pointer;
 }
 
-.fa-magnifying-glass{
+.fa-magnifying-glass {
   color: #888;
   font-size: 15px;
   margin-right: 10px;
