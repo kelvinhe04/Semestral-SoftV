@@ -1,11 +1,119 @@
+/*============= GENERAL==================*/
 * {
-font-family: 'Roboto', sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
   font-size: 18px;
   box-sizing: border-box;
 }
 
+/*============= SOBRE NOSOTROS==================*/
+.sobre-nosotros {
+  position: relative; /* Para posicionar elementos de forma relativa a este contenedor */
+  display: flex; /* Habilitar Flexbox */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 442px; /* Ajusta el alto según sea necesario */
+  background-color: #1a2f2d; /* Color de fondo opcional */
+}
+
+.sobre-nosotros img {
+  width: 100%; /* Asegúrate de que la imagen ocupe todo el ancho */
+  height: 442px;
+  position: absolute; /* Superpone la imagen detrás del texto */
+}
+
+.sobre-nosotros h1 {
+  color: #a9bb9c; /* Contraste con el fondo */
+  margin: 0; /* Elimina márgenes predeterminados */
+  text-align: center;
+  font-size: 5.3rem;
+  font-family: "Syne", sans-serif;
+}
+/*============= CONTENERDOR PARRAFOS==================*/
+.contenedor-parrafo {
+  padding: 110px 270px;
+}
+.contenedor-blanco {
+  padding: 30px;
+}
+.contenedor-blanco p {
+  font-size: 1.3rem;
+  font-family: "ABeeZee", sans-serif;
+}
+.contenedor-para-gris {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+.contenedor-gris {
+  padding: 30px;
+  background-color: #d1d1d1;
+  border-radius: 10px;
+  width: 41%;
+}
+.contenedor-gris p {
+  font-size: 1.3rem;
+  font-family: "ABeeZee", sans-serif;
+}
+/*============= CONTENERDOR VALORES==================*/
+
+.contenedor-valores{
+  display: flex;
+  background-color: #A9BB9C;
+  padding: 80px 80px 0 80px;
+  gap: 180px;
+   position: relative;
+}
+.valores h1{
+  font-size: 5.3rem;
+  color: #1A2F2D;
+  margin-bottom: 40px;
+}
+.descripcion{
+  display: flex;
+  gap: 150px;
+
+}
+
+ol li{
+  font-size: 1.35rem;
+   margin-bottom: 60px; /* Espacio entre los elementos */
+  
+}
+.flotante{
+  position: absolute; /* Permite que flote encima de la imagen */
+  bottom: -69px; /* Ajusta la posición desde la parte inferior */
+  left: 50%; /* Centra horizontalmente */
+  transform: translateX(-50%); /* Ajusta el centrado real */
+  background-color: #1A2F2D; /* Fondo semitransparente */
+  color: #fff; /* Texto blanco para contraste */
+  padding: 20px 100px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  text-align: left; /* Centra el texto */
+  max-width: 60%; /* Limita el ancho del párrafo */
+ 
+}
+.flotante p{
+  font-size: 1.3rem;
+}
+/*============= CONTENERDOR GRACIAS==================*/
+.gracias{
+  padding: 200px 0 140px 0;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gracias-contenido{
+  max-width: 48%;
+   padding: 20px 100px; /* Espaciado interno */
+ 
+}
+.gracias-contenido p{
+    font-size: 1.35rem;
+}
 
 /*============= scroll bar==================*/
 ::-webkit-scrollbar {
