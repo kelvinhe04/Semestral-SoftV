@@ -172,3 +172,61 @@
   height: 20px;
   margin: 10px;
 }
+.promotions-section {
+  background-color: #4e8672; /* Fondo verde */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+/* Espaciado externo */
+margin: 20px auto; /* Espacio arriba/abajo, centrado horizontal */
+max-width: 1400px; /* Ancho máximo del contenedor */
+}
+
+.promotions-section h3 {
+  font-size: 20px;
+  margin: 0 0 5px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+.promotions-section p {
+  font-size: 16px;
+  margin: 0 0 20px;
+  text-align: center;
+  color: white;
+}
+
+.promotions-section form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  width: 100%; /* Asegura que el formulario use el ancho total */
+}
+
+.promotions-section input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  flex: 1; /* Permite que el input se ajuste proporcionalmente */
+  max-width: 250px;
+}
+
+.promotions-section button {
+  background-color: #d84c4c; /* Fondo rojo */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.promotions-section button:hover {
+  background-color: #b43a3a; /* Color más oscuro en hover */
+}
