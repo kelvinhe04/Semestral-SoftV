@@ -80,7 +80,6 @@
   color: #ffffff;
   text-decoration: none;
   padding: 10px 0;
-  transition: background-color 0.3s ease, color 0.3s ease;
   font-weight: bold;
   position: relative;
 
@@ -104,14 +103,15 @@
 }
 
 .navbar-brand {
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:  color 0.3s ease;
   color: #ffffff;
   font-size: 1.6rem;
   text-decoration: none;
   font-family: "Lexend Giga", sans-serif;
 }
+
 .navbar-brand:hover {
-  color: #d4d2d2;
+  color: #d9d3d3;
 }
 .search-container {
   display: flex;
