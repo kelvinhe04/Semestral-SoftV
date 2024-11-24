@@ -1,3 +1,5 @@
+
+
 /*============= GENERAL==================*/
 * {
   font-family: "Inter", sans-serif;
@@ -69,6 +71,7 @@
   font-size: 5.3rem;
   color: #1A2F2D;
   margin-bottom: 40px;
+  font-family: "Syne", sans-serif;
 }
 .descripcion{
   display: flex;
@@ -79,6 +82,7 @@
 ol li{
   font-size: 1.35rem;
    margin-bottom: 60px; /* Espacio entre los elementos */
+   font-family: "ABeeZee", sans-serif;
   
 }
 .flotante{
@@ -92,10 +96,12 @@ ol li{
   border-radius: 10px; /* Bordes redondeados */
   text-align: left; /* Centra el texto */
   max-width: 60%; /* Limita el ancho del párrafo */
+  
  
 }
 .flotante p{
   font-size: 1.3rem;
+  font-family: "ABeeZee", sans-serif;
 }
 /*============= CONTENERDOR GRACIAS==================*/
 .gracias{
