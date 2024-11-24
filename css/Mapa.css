@@ -1,12 +1,14 @@
 
 /*============= GENERAL==================*/
 * {
-  font-family: 'Syne', sans-serif;
+  
   margin: 0;
   padding: 0;
   font-size: 18px;
   box-sizing: border-box;
+  
 }
+
 /*============= MAPA==================*/
 .map-container{
     
@@ -23,6 +25,8 @@
 .map-container h1{
   font-size: 3rem;
   margin: 30px 0 30px;
+  font-family: 'Syne', sans-serif;
+  
   
 }
 .map-container p{
@@ -41,6 +45,8 @@
 .distribucion h2 {
   font-size: 2.6rem;
   margin-bottom: 20px;
+  font-family: 'Syne', sans-serif;
+
 }
 
 .img {
