@@ -6,14 +6,13 @@
   box-sizing: border-box;
 }
 
-/* Banner */
+/*============= BANNER==================*/
 .banner {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   background-color: #558A7A;
-  /* padding: 70px; */
-  margin: 30px 60px;
+  margin: 30px 60px 0 60px  ;   
   border-radius: 10px;
 }
 
@@ -24,7 +23,7 @@
 }
 
 .text-content h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: white;
   line-height: 1.3;
   font-weight: 700;
@@ -41,7 +40,7 @@
   
 }
 
-/* Contenedor de imágenes */
+/*============= CONTENEDOR DE LA FIGURA Y IMAGENES==================*/
 .image-container {
   position: relative;
   max-width: 45%;
@@ -92,14 +91,13 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 20px 60px;
   gap: 20px;
 }
 
 .product-item {
   width: 200px; /* Ajusta el tamaño del contenedor */
   height: 200px; /* Ajusta el tamaño del contenedor */
-  background-color: #f5f5f5;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -120,39 +118,25 @@
   transform: scale(1.2); /* Efecto de zoom al pasar el cursor */
 }
 
-.Centrar {
+.centrar {
   text-align: center;
-  margin: 20px 0;
+  margin: 50px 0 30px 0;
 }
-
-
-
-/*============= scroll bar==================*/
-::-webkit-scrollbar {
-  width: 15px;
+.centrar p{
+  font-size: 2rem;
+    color: #1A2F2D;
 }
-
-/* Track */
-::-webkit-scrollbar-track {
-  background-color: #2a2725;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #726c68;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #605a57;
+.centrar p strong{
+  font-size: 2rem;
+  color: #1A2F2D;
 }
 
 /*Metodos de pago*/
 .pago{
   background-color: #A9BB9C;
   padding: 20px;
-  margin: 20px;
+  margin: 70px 0;
+
 }
 
 .titulo{
@@ -181,24 +165,31 @@
   height: 20px;
   margin: 10px;
 }
+
+/*============= SECCION DE EMAIL==================*/
 .promotions-section {
   background-color: #4e8672; /* Fondo verde */
-  padding: 20px;
+  padding: 60px 30px;
   border-radius: 10px;
   text-align: center;
   color: white;
   font-family: Arial, sans-serif;
-/* Espaciado externo */
-margin: 20px auto; /* Espacio arriba/abajo, centrado horizontal */
-max-width: 1390px; /* Ancho máximo del contenedor */
+  margin: 100px 60px 0 60px  ;
+  
+  display: flex;
 }
-
+.promotions-section-izquierda{
+  width: 60%;
+  
+  
+}
 .promotions-section h3 {
   font-size: 30px; /* Incrementa el tamaño del título */
   margin: 0 0 10px; /* Añade más espacio debajo */
   font-weight: bold;
   text-align: left; /* Alinea el título a la izquierda */
   color: white;
+  text-align: center;
 }
 
 .promotions-section p {
@@ -206,16 +197,18 @@ max-width: 1390px; /* Ancho máximo del contenedor */
   margin: 0 0 5px; /* Mantiene espacio debajo del párrafo */
   text-align: left; /* Alinea el párrafo a la izquierda */
   color: white;
+  text-align: center; 
+  font-family: 'ABeeZee', sans-serif;
 }
 
 
 .promotions-section form {
   display: flex;
   flex-direction: column; /* Coloca los elementos en columna */
-  align-items: flex-end; /* Alinea todo a la derecha */
-  gap: 10px; /* Espacio entre el input y el botón */
-  width: 100%; /* Asegura que el formulario use el ancho total */
-  margin-top: -67px; /* Ajusta la posición del formulario más hacia arriba */
+  align-items: center; /* Alinea todo a la derecha */
+  gap: 15px; /* Espacio entre el input y el botón */
+  width: 40%;
+
 }
 
 .promotions-section input[type="email"] {
@@ -232,10 +225,45 @@ max-width: 1390px; /* Ancho máximo del contenedor */
   color: white;
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 25px;
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s;
   width: 100%; /* Asegura que el botón tenga el mismo ancho que el input */
   max-width: 300px; /* Limita el ancho máximo */
 }
+.promotions-section button:hover{
+  background-color: #ad3943;
+
+}
+
+
+
+
+
+
+
+
+
+
+/*============= scroll bar==================*/
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #2a2725;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #726c68;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #605a57;
+}
+
