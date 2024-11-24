@@ -22,34 +22,50 @@
     <div id="navbar-container"></div>
 
     <div class="map-container">
-      <h1>Nuestra <br>Ubicación</h1>
-      
-      <p>Encuentra fácilmente nuestro local y explora nuestras instalaciones.<br>¡Estamos más cerca de lo que imaginas! </p>
-     
+      <h1>Nuestra <br />Ubicación</h1>
+
+      <p>
+        Encuentra fácilmente nuestro local y explora nuestras instalaciones.<br />¡Estamos
+        más cerca de lo que imaginas!
+      </p>
+
       <div id="map"></div>
     </div>
-    <div class="distribucion">ds</div>
-    
+    <div class="distribucion">
+      <div class="map-container">
+        <h2>Distribución de nuestros locales</h2>
+
+      <div class="img">
+        <img src="Img/Mapa/merca1.webp" alt="Imagen 1" />
+      </div>
+
+      </div>
+      
+    </div>
+
     <div id="footer-container"></div>
     <script src="javascript/Ordenar.js"></script>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-      var map = L.map("map").setView(
-        [9.033868734790088, -79.57669250534278],
-        13
-      );
+   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  var map = L.map("map").setView(
+    [9.033868734790088, -79.57669250534278],
+    13
+  );
 
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }).addTo(map);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {}).addTo(map);
 
-      L.marker([9.033868734790088, -79.57669250534278])
-        .addTo(map)
-        .bindPopup("<b>AgroDelis</b><br>Vía Centenario")
-        .openPopup();
-    </script>
-    
+  L.marker([9.033868734790088, -79.57669250534278])
+    .addTo(map)
+    .bindPopup(
+      "<b>AgroDelis</b><br>Vía Centenario", 
+      {
+      
+        minWidth: 135, // Tamaño mínimo opcional (puedes ajustarlo según prefieras)
+      }
+    )
+    .openPopup();
+</script>
+
   </body>
 </html>
