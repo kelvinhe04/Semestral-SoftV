@@ -112,6 +112,7 @@ ol li {
 }
 
 .gracias-contenido {
+  text-align: center;
   max-width: 48%;
   padding: 20px 100px; /* Espaciado interno */
   min-width: 700px;
