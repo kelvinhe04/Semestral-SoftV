@@ -97,31 +97,35 @@
 }
 
 .product-item {
-  width: 250px;
-  height: 250px;
+  width: 200px; /* Ajusta el tamaño del contenedor */
+  height: 200px; /* Ajusta el tamaño del contenedor */
   background-color: #f5f5f5;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Evita que la imagen sobresalga */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  overflow: hidden; /* Evita que las imágenes sobresalgan */
+  position: relative; /* Posición relativa para contener la imagen */
 }
 
 .product-item img {
   width: 100%;
-  height: 100%;
+  height: auto; /* Ajusta la altura automáticamente respetando el aspecto */
+  max-height: 100%; /* No permite que la imagen supere la altura del contenedor */
   object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+  transition: transform 0.5s ease; /* Suaviza el efecto de zoom */
 }
 
-.product-item:hover {
-  transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+.product-item:hover img {
+  transform: scale(1.2); /* Efecto de zoom al pasar el cursor */
 }
+
 .Centrar {
   text-align: center;
-  margin: 20px 0; /* Espaciado superior e inferior opcional */
+  margin: 20px 0;
 }
+
+
 
 /*============= scroll bar==================*/
 ::-webkit-scrollbar {
@@ -173,7 +177,7 @@
 }
 
 .metodo2 img{
-  width: 30px; /*ajustar tamaño imagen*/
+  width: 50px; /*ajustar tamaño imagen*/
   height: 20px;
   margin: 10px;
 }
@@ -186,30 +190,32 @@
   font-family: Arial, sans-serif;
 /* Espaciado externo */
 margin: 20px auto; /* Espacio arriba/abajo, centrado horizontal */
-max-width: 1400px; /* Ancho máximo del contenedor */
+max-width: 1390px; /* Ancho máximo del contenedor */
 }
 
 .promotions-section h3 {
-  font-size: 20px;
-  margin: 0 0 5px;
+  font-size: 30px; /* Incrementa el tamaño del título */
+  margin: 0 0 10px; /* Añade más espacio debajo */
   font-weight: bold;
-  text-align: center;
+  text-align: left; /* Alinea el título a la izquierda */
   color: white;
 }
 
 .promotions-section p {
-  font-size: 16px;
-  margin: 0 0 20px;
-  text-align: center;
+  font-size: 20px; /* Incrementa el tamaño del texto */
+  margin: 0 0 5px; /* Mantiene espacio debajo del párrafo */
+  text-align: left; /* Alinea el párrafo a la izquierda */
   color: white;
 }
 
+
 .promotions-section form {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  align-items: center;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: flex-end; /* Alinea todo a la derecha */
+  gap: 10px; /* Espacio entre el input y el botón */
   width: 100%; /* Asegura que el formulario use el ancho total */
+  margin-top: -67px; /* Ajusta la posición del formulario más hacia arriba */
 }
 
 .promotions-section input[type="email"] {
@@ -217,8 +223,8 @@ max-width: 1400px; /* Ancho máximo del contenedor */
   border: none;
   border-radius: 5px;
   font-size: 14px;
-  flex: 1; /* Permite que el input se ajuste proporcionalmente */
-  max-width: 250px;
+  width: 100%; /* Asegura que ocupe el máximo ancho posible */
+  max-width: 300px; /* Limita el ancho máximo */
 }
 
 .promotions-section button {
@@ -230,8 +236,6 @@ max-width: 1400px; /* Ancho máximo del contenedor */
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-
-.promotions-section button:hover {
-  background-color: #b43a3a; /* Color más oscuro en hover */
+  width: 100%; /* Asegura que el botón tenga el mismo ancho que el input */
+  max-width: 300px; /* Limita el ancho máximo */
 }
