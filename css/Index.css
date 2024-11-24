@@ -218,6 +218,7 @@
   font-size: 14px;
   width: 100%; /* Asegura que ocupe el máximo ancho posible */
   max-width: 300px; /* Limita el ancho máximo */
+  text-align: center;
 }
 
 .promotions-section button {
