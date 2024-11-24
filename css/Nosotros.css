@@ -196,6 +196,16 @@ ol li {
     flex-direction: column;
     gap: 0;
   }
+   .sobre-nosotros {
+
+  height: 350px; /* Ajusta el alto según sea necesario */
+
+}
+.sobre-nosotros img {
+
+  height: 350px;
+
+}
  
 }
 
@@ -203,6 +213,16 @@ ol li {
 
 
 @media (max-width: 768px) {
+  .sobre-nosotros {
+
+  height: 300px; /* Ajusta el alto según sea necesario */
+
+}
+.sobre-nosotros img {
+
+  height: 300px;
+
+}
   .sobre-nosotros h1 {
     font-size: 3.6rem;
   }
