@@ -160,12 +160,14 @@ ol li {
 
   .flotante p {
     font-size: 1rem;
-    font-family: "ABeeZee", sans-serif;
+    
   }
   .gracias-contenido p {
     font-size: 1.2rem;
   }
 }
+
+
 
 @media (max-width: 1420px) {
   .sobre-nosotros h1 {
@@ -185,6 +187,9 @@ ol li {
   }
 }
 
+
+
+
 @media (max-width: 1120px) {
   .descripcion {
     flex-direction: column;
@@ -192,6 +197,9 @@ ol li {
   }
  
 }
+
+
+
 
 @media (max-width: 768px) {
   .sobre-nosotros h1 {
@@ -217,4 +225,108 @@ ol li {
   padding: 20px 50px; /* Espaciado interno */
 
 }
+}
+
+
+
+
+@media (max-width: 393px) {
+  .sobre-nosotros {
+
+  height: 200px; /* Ajusta el alto según sea necesario */
+
+}
+.sobre-nosotros img {
+
+  height: 200px;
+
+}
+.sobre-nosotros h1 {
+    font-size: 2rem;
+  }
+  .contenedor-parrafo {
+ 
+    width: 93%;
+    margin: 0 auto;
+    padding: 0;
+
+  }
+
+  .contenedor-blanco p {
+  font-size: 0.8rem;
+
+}
+.contenedor-blanco {
+  margin-top: 30px;
+  padding: 0;
+  min-width: 0;
+
+ 
+}
+.contenedor-para-gris {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+
+}
+.contenedor-gris {
+  padding: 15px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  
+}
+
+.contenedor-gris p {
+  font-size: 0.8rem;
+
+}
+.contenedor-valores {
+
+  margin-top: 40px;
+
+  padding: 20px 0 30px 0;
+
+  position: relative;
+}
+.valores h1 {
+    font-size: 1.8rem;
+  }
+  ol li {
+    font-size: 0.8rem;
+    
+  }
+  .flotante {
+
+  bottom: -65px; /* Ajusta la posición desde la parte inferior */
+  padding: 20px 30px; /* Espaciado interno */
+  max-width: 0; /* Limita el ancho del párrafo */
+  min-width: 93%;
+  margin: 0 auto;
+}
+
+.flotante p {
+    font-size: 0.8rem;
+  
+  }
+
+  .gracias {
+  padding: 160px 0 70px 0;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.gracias-contenido {
+  max-width: 0;
+  padding: 0 30px; /* Espaciado interno */
+  min-width: 100%;
+ 
+}
+.gracias-contenido p {
+  font-size: 0.8rem;
+}
+
 }
