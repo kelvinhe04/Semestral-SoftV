@@ -68,13 +68,14 @@
     background-color: #1A2F2D;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
     margin: 0;
 
 }
 .copyright-section p{
     font-family: "ABeeZee", sans-serif;
     margin: 0;
+    font-size: 1rem;
   
 }
 
@@ -114,6 +115,10 @@
   padding: 10px;
   width: 100%;
   
+  
+}
+.copyright-section p{
+    font-size: 0.8rem;
   
 }
 
@@ -160,8 +165,11 @@
     font-size: 0.8rem;
 
 }
+.copyright-section{
+  padding: 10px 0;
+}
 .copyright-section p{
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   
 }
 
