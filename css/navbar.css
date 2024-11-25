@@ -180,5 +180,15 @@
     display: none;
 
   }
+
+}
+
+@media (max-width: 393px) {
+
+
+  .navbar-brand1{
+    font-size: 0.8rem !important
+  }
+
 }
 
