@@ -1,30 +1,29 @@
 * {
-  /*font-family: 'Inter', sans-serif;*/
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 /*============= SECCION DE EMPRENIDMIENTOS ==================*/
-.titulos h1{
+.titulos {
   text-align: center;
-  margin: 30px 0;
-  font-size: 2rem; /* Tamaño fuente*/
+  margin: 20px 0;
+  font-size: 5rem; /* Tamaño aumentado */
+  line-height: 1.3;
   color: #1A2F2D;
 }
 
-.titulos h1 strong{
-  font-size: 2rem;
-  font-weight: bold;
+.titulos .negrita {
+  font-weight: 700;
 }
 
-.titulo2 h1{
+.titulo2 {
   text-align: center;
-  margin: 0px, 0, 80px, 0;
-  font-size: 3rem;
-  font-weight: 720;
+  font-size: 4rem;
+  font-weight: 800;
   color: #4e8672;
-  font-family: 'Syne', sans-serif;
+  font-family: 'ABeeZee', sans-serif;
 }
 
 .tabla {

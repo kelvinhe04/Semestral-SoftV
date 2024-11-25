@@ -1,3 +1,4 @@
+
 /* styles.css */
 * {
   font-family: 'Inter', sans-serif;
@@ -11,12 +12,19 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
 }
+
 .navbar-superior {
   background-color: #558a7a;
   display: flex;
   justify-content: space-between;
   padding: 20px 60px;
+   width: 100%;
+   margin: 0;
+   box-sizing: border-box;
 }
 .carrito {
   background-color: #c5414b;
@@ -131,6 +139,7 @@
   flex: 1;
   font-size: 16px;
   color: #333;
+  
 }
 
 .search-icon {
@@ -147,4 +156,16 @@
 
 .search-input::placeholder {
   color: #888;
+}
+
+
+@media (max-width: 992px){
+  .navbar-inferior{
+    display: none;
+
+  }
+  .navbar-superior{
+    display: none;
+
+  }
 }
