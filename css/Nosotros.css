@@ -304,11 +304,8 @@ ol li {
 
 }
 .contenedor-valores {
-
   margin-top: 40px;
-
-  padding: 20px 0 30px 0;
-
+  padding: 20px 0 50px 0;
   position: relative;
 }
 .valores h1 {
@@ -320,11 +317,12 @@ ol li {
   }
   .flotante {
 
-  bottom: -65px; /* Ajusta la posición desde la parte inferior */
-  padding: 20px 30px; /* Espaciado interno */
+  bottom: -74px; /* Ajusta la posición desde la parte inferior */
+  padding: 10px 30px; /* Espaciado interno */
   max-width: 0; /* Limita el ancho del párrafo */
   min-width: 93%;
   margin: 0 auto;
+ 
 }
 
 .flotante p {
