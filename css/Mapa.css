@@ -12,8 +12,11 @@
 /*============= MAPA==================*/
 
 
+.custom-popup {
 
+  min-width: 135px;
 
+}
 .map-container{
     
   margin: 0 auto 0;
@@ -128,7 +131,7 @@
 @media (max-width: 393px) {
 
   .map-container{
-  width: 97%;
+  width: 93%;
 
 }
 
@@ -146,7 +149,11 @@
 .distribucion {
 margin-top: 50px;
   padding: 30px 0 ;
+
+  
+
 }
+
 .distribucion h2 {
   font-size: 1.8rem;
   
@@ -158,6 +165,16 @@ margin-top: 50px;
 
     
 }
+.custom-popup {
+  font-size: 0.8rem; /* Cambia el tamaño según sea necesario */
+  min-width: 120px;
+
+}
+
+ .custom-popup b {
+    font-size: 0.8rem; /* Asegúrate de que el estilo <b> también se ajuste */
+  }
+
 
 
 
