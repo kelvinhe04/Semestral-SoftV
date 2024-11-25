@@ -157,6 +157,15 @@
 .search-input::placeholder {
   color: #888;
 }
+/* Asegúrate de que el menú desplegado no empuje el contenido */
+.navbar-collapse {
+  position: absolute;  /* Cambiar a 'absolute' o 'fixed' para evitar que empuje el contenido */
+  top: 100%;  /* Asegurarte de que se ubique justo debajo de la barra de navegación */
+  left: 0;
+  right: 0;
+  background-color: #558a7a; /* Ajusta el fondo si es necesario */
+  z-index: 1000;  /* Asegúrate de que el menú quede por encima del contenido */
+}
 
 
 
