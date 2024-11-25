@@ -5,7 +5,7 @@
 ////////////////////////////////////////////////////////
 
 function cargarNavbar() {
-  fetch("../navbar.html")
+  fetch("navbar.html")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Error al cargar navbar " + response.status);
@@ -26,7 +26,7 @@ function cargarNavbar() {
 ////////////////////////////////////////////////////////
 
 function cargarFooter() {
-  fetch("../Footer.html")
+  fetch("Footer.html")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Error al cargar footer " + response.status);
