@@ -116,7 +116,7 @@
   color: #ffffff;
   font-size: 1.6rem;
   text-decoration: none;
-  font-family: "Lexend Giga", sans-serif;
+  font-family: "Lexend Giga", sans-serif !important;
 }
 
 .navbar-brand:hover {
