@@ -164,3 +164,69 @@ blockquote {
 ::-webkit-scrollbar-thumb:hover {
   background: #605a57;
 }
+
+
+
+
+
+
+
+
+@media (max-width: 920px){
+
+  
+.promotions-section {
+
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.promotions-section-izquierda{
+  width: 100%;
+  
+  
+}
+.promotions-section h3 {
+  margin: 0 0 10px; /* Añade más espacio debajo */
+  text-align: left;
+}
+
+.promotions-section p {
+  margin: 0 0 25px; /* Mantiene espacio debajo del párrafo */
+  text-align: left; 
+  
+}
+
+
+
+
+
+}
+
+@media (max-width: 393px) {
+
+
+.promotions-section {
+  padding: 10px 10px 15px 10px;
+  width: 97%;
+  margin: 100px auto 0 auto ;
+}
+.promotions-section h3 {
+  font-size: 25px; /* Incrementa el tamaño del título */
+
+}
+
+.promotions-section p {
+  font-size: 15px; /* Incrementa el tamaño del texto */
+
+}
+.promotions-section form {
+
+  width: 80%;
+
+}
+
+
+
+}
