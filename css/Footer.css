@@ -61,14 +61,15 @@
 }
 
 /*============= COPYRIGHT==================*/
-.copyright{
+.copyright-section{
     background-color: #1A2F2D;
     color: white;
     text-align: center;
     padding: 10px 0;
+    margin: 0;
 
 }
-.copyright p{
+.copyright-section p{
     font-family: "ABeeZee", sans-serif;
   
 }
