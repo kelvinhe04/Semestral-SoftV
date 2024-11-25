@@ -37,6 +37,7 @@ p {
   padding: 0 30px;
 
 
+
  
 }
 /* -------------------------------------------*/
@@ -47,6 +48,7 @@ p {
   flex-wrap: wrap; /* Permite que las cartas se acomoden en múltiples líneas si es necesari*/
   gap: 25px;
   justify-content:flex-start; /* Alinea las cartas a la izquierda */
+
 
 
 }
@@ -256,4 +258,55 @@ background-color: #ad3943;
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #605a57;
+}
+
+
+@media (max-width: 1550px){
+
+  .contenedor {
+
+  width: 90%;
+  padding: 0 ;
+
+
+
+
+ 
+}
+#productos-container {
+ 
+  justify-content:center; /* Alinea las cartas a la izquierda */
+
+
+
+}
+
+
+  
+}
+
+
+
+
+
+@media (max-width: 992px){
+
+  .contenedor {
+
+  width: 93%;
+  padding: 0 ;
+
+
+
+ 
+}
+
+#productos-container {
+ 
+  justify-content:center; /* Alinea las cartas a la izquierda */
+
+
+
+}
+  
 }
