@@ -45,6 +45,7 @@
   line-height: 1.6;
   max-width: 55%;
   font-family: 'ABeeZee', sans-serif;
+ 
   
 
   
@@ -105,6 +106,8 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  width: 97%;
+  margin: 0 auto;
 }
 
 .product-item {
@@ -135,14 +138,11 @@
   text-align: center;
   margin: 50px 0 30px 0;
 }
-.centrar p{
+.centrar p, .centrar p strong{
   font-size: 2rem;
     color: #1A2F2D;
 }
-.centrar p strong{
-  font-size: 2rem;
-  color: #1A2F2D;
-}
+
 
 /*Metodos de pago*/
 .pago{
@@ -383,6 +383,36 @@
   
   
 }
+.centrar p, .centrar p strong{
+  font-size: 1.5rem;
+    color: #1A2F2D;
+}
+.promotions-section {
+
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.promotions-section-izquierda{
+  width: 100%;
+  
+  
+}
+.promotions-section h3 {
+  margin: 0 0 10px; /* Añade más espacio debajo */
+  text-align: left;
+}
+
+.promotions-section p {
+  margin: 0 0 25px; /* Mantiene espacio debajo del párrafo */
+  text-align: left; 
+  
+}
+
+
+
+
 
 }
 
@@ -426,7 +456,7 @@
 .banner{
    
 
-  gap: 30px;
+  gap: 0  ;
   padding: 10px 10px 0 10px;
   flex-direction: column;
 
@@ -449,5 +479,35 @@
 
 
 }
+.centrar p, .centrar p strong{
+  font-size: 1.5rem;
+    color: #1A2F2D;
+}
+.product-item {
+  width: 100px; /* Ajusta el tamaño del contenedor */
+  height: 100px; /* Ajusta el tamaño del contenedor */
+
+}
+.promotions-section {
+  padding: 10px 10px 15px 10px;
+  width: 97%;
+  margin: 100px auto 0 auto ;
+}
+.promotions-section h3 {
+  font-size: 25px; /* Incrementa el tamaño del título */
+
+}
+
+.promotions-section p {
+  font-size: 15px; /* Incrementa el tamaño del texto */
+
+}
+.promotions-section form {
+
+  width: 80%;
+
+}
+
+
 
 }
