@@ -10,11 +10,13 @@
 }
 
 
-
-.container2{
-    padding: 40px 110px;
-    background-color: #D7D7D7;
+.container-gris{
+  background-color: #d7d7d7;
+  padding: 40px 110px;
     margin-top: 60px;
+}
+.container2{
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,7 +30,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    
+  
 }
 .contenedor-izquierda a{
     text-decoration: none;
@@ -46,12 +48,13 @@
     width: 300px;
     display: flex;
     gap: 40px;
-    justify-content: center;
-    height: 150px;
+    justify-content:right;
+    height: 120px;
     align-items: start;
+  
 }
 .contenedor-derecha a{
-    /* background-color: aqua; */
+
     display: flex;
     align-items: center;
     
@@ -77,36 +80,88 @@
 
 @media (max-width: 1150px) {
 
-   .container2 {
+   
+
+.container2 {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-  gap: 20px; /* Espacio entre las celdas */
-  padding: 20px;
-  background-color: #d7d7d7;
-    /* Centrando las columnas */
-  justify-content: center; /* Centrar horizontalmente */
-  align-content: center; /* Centrar verticalmente */
+  gap: 0; /* Sin espacio entre las celdas */
+  
 }
 
 .contenedor-izquierda {
-  background-color: blue;
+  
   grid-column: 1; /* Se queda en la primera columna */
   grid-row: 1 / 3; /* Ocupa dos filas */
   padding: 10px;
 }
 
 .contenedor-centro {
-  background-color: green;
-  grid-column: 1; /* En la primera columna */
-  grid-row: 3; /* Debajo de contenedor-izquierda */
+  
+  grid-column: 1 / 3; /* Ocupa ambas columnas */
+  grid-row: 3; /* Se queda en la tercera fila */
   padding: 10px;
+  display: flex; /* Usamos flexbox */
+  justify-content: center; /* Centra la imagen horizontalmente */
+  align-items: center; /* Centra la imagen verticalmente */
 }
 
 .contenedor-derecha {
-  background-color: blanchedalmond;
+ 
   grid-column: 2; /* En la segunda columna */
   grid-row: 1 / 3; /* Ocupa dos filas al lado derecho */
   padding: 10px;
+  width: 100%;
+  
+  
+}
+
+
+
+}
+
+@media (max-width: 755px) {
+  .container-gris{
+    padding: 20px 0;
+
+  }
+  .container2{
+    width: 93%;
+    margin:  0 auto;
+  }
+  .contenedor-derecha{
+    flex-direction: column;
+     padding: 0;
+    width: auto;
+    height: auto;
+    align-items: end  ;
+    gap: 15px;
+  }
+  .contenedor-derecha .img{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+
+  }
+  .contenedor-derecha .img img{
+    width: 25px;
+  }
+
+  .contenedor-centro img{
+    width: 250px;
+
+}
+.contenedor-izquierda{
+  padding: 0;
+}
+.contenedor-izquierda a{
+    width: 200px;
+    font-size: 0.8rem;
+
+}
+.copyright-section p{
+    font-size: 0.8rem;
+  
 }
 
 
