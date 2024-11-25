@@ -10,6 +10,10 @@
 }
 
 /*============= MAPA==================*/
+
+
+
+
 .map-container{
     
   margin: 0 auto 0;
@@ -86,4 +90,75 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #605a57;
+}
+
+
+@media (max-width: 1450px) {
+
+  .map-container{
+    
+ 
+  width: 95%;
+  padding: 0;
+ 
+}
+@media (max-width: 920px){
+
+  .map-container h1{
+  font-size: 2.3rem;
+  margin: 30px 0 30px;
+
+  
+  
+}
+.distribucion h2 {
+  font-size: 2.3rem;
+
+
+}
+
+
+
+}
+
+}
+
+
+
+@media (max-width: 393px) {
+
+  .map-container{
+  width: 97%;
+
+}
+
+.map-container h1{
+  font-size: 1.8rem;
+  margin: 30px 0 30px;
+
+  
+  
+}
+.map-container p{
+
+  font-size: 0.8rem;
+}
+.distribucion {
+margin-top: 50px;
+  padding: 30px 0 ;
+}
+.distribucion h2 {
+  font-size: 1.8rem;
+  
+
+
+}
+#map {
+  height: 300px; /* Cambia este valor según el tamaño que desees */
+
+    
+}
+
+
+
 }
