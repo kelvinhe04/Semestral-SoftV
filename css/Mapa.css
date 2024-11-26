@@ -1,79 +1,62 @@
-
 /*============= GENERAL==================*/
 * {
-  
   margin: 0;
   padding: 0;
   font-size: 18px;
   box-sizing: border-box;
   font-size: 18px;
-  
 }
 
 /*============= MAPA==================*/
 
-
 .custom-popup {
-
   min-width: 135px;
-
 }
-.map-container{
-    
+.map-container {
   margin: 0 auto 0;
   width: 85%;
   padding: 0 30px;
 }
 #map {
   height: 600px; /* Cambia este valor según el tamaño que desees */
-  width: 100%;   /* Asegúrate de que el mapa ocupe todo el ancho de su contenedor */
+  width: 100%; /* Asegúrate de que el mapa ocupe todo el ancho de su contenedor */
   border-radius: 10px;
-    
 }
-.map-container h1{
+.map-container h1 {
   font-size: 3rem;
   margin: 30px 0 30px;
-  font-family: 'Syne', sans-serif;
-  
-  
+  font-family: "Syne", sans-serif;
 }
-.map-container p{
+.map-container p {
   margin-bottom: 30px;
-  font-family: 'ABeeZee', sans-serif;
+  font-family: "ABeeZee", sans-serif;
 }
 /*============= NUESTROS LOCALES==================*/
 .distribucion {
   width: 100%;
   height: auto;
-  background-color: #A9BB9C;
+  background-color: #a9bb9c;
   margin-top: 100px;
-  padding: 60px 0 ;
+  padding: 60px 0;
 }
 
 .distribucion h2 {
   font-size: 2.6rem;
   margin-bottom: 20px;
-  font-family: 'Syne', sans-serif;
-
+  font-family: "Syne", sans-serif;
 }
 
 .img {
- height: auto; /* Cambia este valor según el tamaño que desees */
-  width: 100%; 
-
+  height: auto; /* Cambia este valor según el tamaño que desees */
+  width: 100%;
 }
 
-.img img {
+.img-mapa img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
-  
 }
-
-
-
-
 
 /*============= scroll bar==================*/
 ::-webkit-scrollbar {
@@ -96,87 +79,66 @@
   background: #605a57;
 }
 
-
 @media (max-width: 1450px) {
-
-  .map-container{
-    
- 
-  width: 95%;
-  padding: 0;
- 
+  .map-container {
+    width: 95%;
+    padding: 0;
+  }
+  @media (max-width: 920px) {
+    .map-container h1 {
+      font-size: 2.2rem;
+      margin: 30px 0 30px;
+    }
+    .distribucion h2 {
+      font-size: 2.2rem;
+    }
+  }
 }
-@media (max-width: 920px){
-
-  .map-container h1{
-  font-size: 2.3rem;
-  margin: 30px 0 30px;
-
-  
-  
+@media (max-width: 650px) {
+  .map-container h1 {
+    font-size: 2rem;
+  }
+  .distribucion h2 {
+    font-size: 2rem;
+  }
 }
-.distribucion h2 {
-  font-size: 2.3rem;
-
-
-}
-
-
-
-}
-
-}
-
-
 
 @media (max-width: 393px) {
-
-  .map-container{
-  width: 93%;
-
-}
-
-.map-container h1{
-  font-size: 1.8rem;
-  margin: 30px 0 30px;
-
-  
-  
-}
-.map-container p{
-
-  font-size: 0.8rem;
-}
-.distribucion {
-margin-top: 50px;
-  padding: 30px 0 ;
-
-  
-
-}
-
-.distribucion h2 {
-  font-size: 1.8rem;
-  
-
-
-}
-#map {
-  height: 300px; /* Cambia este valor según el tamaño que desees */
-
-    
-}
-.custom-popup {
-  font-size: 0.8rem; /* Cambia el tamaño según sea necesario */
-  min-width: 120px;
-
-}
-
- .custom-popup b {
-    font-size: 0.8rem; /* Asegúrate de que el estilo <b> también se ajuste */
+  .map-container {
+    width: 93%;
   }
 
+  .map-container h1 {
+    font-size: 1.6rem;
+    margin: 30px 0 30px;
+  }
+  .map-container p {
+    font-size: 0.8rem;
+  }
+  .distribucion {
+    margin-top: 50px;
+    padding: 30px 0;
+  }
 
+  .distribucion h2 {
+    font-size: 1.6rem;
+    width: 75%;
+  }
+  #map {
+    height: 300px; /* Cambia este valor según el tamaño que desees */
+  }
+  .custom-popup {
+    font-size: 0.8rem; /* Cambia el tamaño según sea necesario */
+    min-width: 120px;
+  }
 
+  .custom-popup b {
+    font-size: 0.8rem; /* Asegúrate de que el estilo <b> también se ajuste */
+  }
+}
 
+@media (max-width: 370px) {
+  .distribucion h2 {
+    width: 100%;
+  }
 }
