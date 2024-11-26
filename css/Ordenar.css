@@ -11,7 +11,7 @@
 
 h3 {
   font-family: "Roboto", sans-serif !important;
-  font-size: 1em !important; /* 1.17 veces el tamaño de la fuente base */
+  font-size: 1.1em !important; /* 1.17 veces el tamaño de la fuente base */
   font-weight: bold !important;
   margin: 1.5 !important;
   line-height: normal !important;
@@ -20,7 +20,7 @@ h3 {
   
 }
 p {
-  font-size: 0.8em !important; /* Igual al tamaño base de fuente (normalmente 16px) */
+  font-size: 0.9rem !important; /* Igual al tamaño base de fuente (normalmente 16px) */
   font-weight: normal !important;
   line-height: 0.4 !important;
 }
@@ -74,7 +74,7 @@ p {
 
 .producto h3 {
   font-size: 18px;
-  margin: 8px 0;
+  margin: 15px 0;
 }
 
 .producto p {

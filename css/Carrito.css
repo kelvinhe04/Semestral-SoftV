@@ -123,11 +123,11 @@ p {
   object-fit: contain; /* Ajusta la imagen sin estirarla */
 }
 .producto h3 {
-  font-size: 18px;
-  margin: 8px 0;
+  font-size: 1.1rem;
+  margin: 15px 0;
 }
 .producto p {
-  font-size: 14px !important;
+  font-size: 0.9rem !important;
   color: #555;
 }
 /*============= IZQUIERDA(DESCRIPCION Y PRECIO PRODUCTO) Y DERECHA(BOTON DE INCREMENTAR Y DECREMENTAR)==================*/
@@ -273,6 +273,13 @@ p {
   #carrito-container.vacio h1 {
   font-size: 1.5rem;
   margin: 5px 0 15px 0;
+}
+p {
+  font-size: 0.8em !important; /* Igual al tamaño base de fuente (normalmente 16px) */
+
+}
+#carrito-container p {
+  font-size: 3rem !important;
 }
 
 
