@@ -1,4 +1,3 @@
-/*============= GENERAL==================*/
 * {
   font-family: "Inter", sans-serif !important;
   margin: 0;
@@ -25,7 +24,7 @@
   font-size: 1.8rem;
 }
 
-.titulo2 {
+body .titulo2 h1 {
   text-align: center;
   font-size: 3.5rem;
   font-weight: 650;
@@ -38,11 +37,17 @@
 .contenedor-emprendimientos {
   width: 55%;
   margin: 0 auto;
-  border-collapse: collapse;
-}
 
-.tabla tr {
-  margin-bottom: 20px;
+}
+.emprendimiento {
+  display: flex;
+  margin-top: 70px;
+  justify-content: space-between;
+
+}
+.emprendimiento .img {
+  width: 40%;
+  min-width: 350px;
 }
 .emprendimiento .img img {
   width: 350px;
@@ -170,68 +175,155 @@
   background: #605a57;
 }
 
+@media (max-width: 1607px) {
+  .emprendimiento {
+    gap: 30px;
+  }
 
-
-
-
-
-
-
-@media (max-width: 920px){
-
-  
-.promotions-section {
-
-
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  .contenedor-emprendimientos {
+    width: 70%;
+  }
 }
-.promotions-section-izquierda{
+@media (max-width: 1050px) {
+  .emprendimiento .img img {
+    width: 300px;
+    height: 250px;
+  }
+  .emprendimiento {
+    gap: 20px;
+  }
+  .emprendimiento .img {
+    width: 40%;
+    min-width: 300px;
+  }
+
+
+}
+
+@media (max-width: 920px) {
+  .titulos p span {
+    font-size: 1.4rem;
+  }
+
+  body .titulo2 h1 {
+    font-size: 2.6rem;
+  }
+  .descripcion-emprendimiento h3 {
+    font-size: 1rem;
+    
+  }
+
+
+  .descripcion-emprendimiento p {
+    font-size: 0.9rem;
+ 
+  }
+  .descripcion-emprendimiento blockquote {
+   
+    font-size: 0.9rem;
+
+  }
+  .emprendimiento .img img {
+    width: 250px;
+    height: 200px;
+  }
+  .emprendimiento {
+    gap: 20px;
+  }
+  .emprendimiento .img {
+    width: 40%;
+    min-width: 250px;
+  }
+  .contenedor-emprendimientos {
+    width: 80%;
+  }
+  .promotions-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .promotions-section-izquierda {
+    width: 100%;
+  }
+  .promotions-section h3 {
+    margin: 0 0 10px; /* Añade más espacio debajo */
+    text-align: left;
+  }
+
+  .promotions-section p {
+    margin: 0 0 25px; /* Mantiene espacio debajo del párrafo */
+    text-align: left;
+  }
+}
+@media (max-width: 700px) {
+  .contenedor-emprendimientos {
+    width: 90%;
+  }
+}
+@media (max-width: 600px) {
+  .emprendimiento{
+    flex-direction: column-reverse ;
+  }
+  .descripcion-emprendimiento {
   width: 100%;
+
+}
+.descripcion-emprendimiento p {
+
+  margin: 20px 0 30px 0;
+ 
+}
+.contenedor-titulos{
+  width: 90%;
+  margin: 0 auto;
+}
   
+}
+
+@media (max-width: 500px) {
   
-}
-.promotions-section h3 {
-  margin: 0 0 10px; /* Añade más espacio debajo */
-  text-align: left;
-}
 
-.promotions-section p {
-  margin: 0 0 25px; /* Mantiene espacio debajo del párrafo */
-  text-align: left; 
-  
-}
+  .titulos p span {
+    font-size: 1rem;
+    width: 50%;
+ 
+  }
 
-
+  body .titulo2 h1 {
+    font-size: 2rem;
+  }
 
 
 
 }
+
 
 @media (max-width: 393px) {
+  .titulos{
+    width: 70%;
+    margin: 50px auto 40px auto;
+  }
 
+  .titulos p span {
+    font-size: 1rem;
+  }
 
-.promotions-section {
-  padding: 10px 10px 15px 10px;
-  width: 97%;
-  margin: 100px auto 0 auto ;
-}
-.promotions-section h3 {
-  font-size: 25px; /* Incrementa el tamaño del título */
+  body .titulo2 h1 {
+    font-size: 1.5rem;
+  }
+  .promotions-section {
+    padding: 10px 10px 15px 10px;
+    width: 97%;
+    margin: 100px auto 0 auto;
+  }
+  .promotions-section h3 {
+    font-size: 25px; /* Incrementa el tamaño del título */
+  }
 
-}
-
-.promotions-section p {
-  font-size: 15px; /* Incrementa el tamaño del texto */
-
-}
-.promotions-section form {
-
-  width: 80%;
-
-}
-
-
-
+  .promotions-section p {
+    font-size: 15px; /* Incrementa el tamaño del texto */
+  }
+  .promotions-section form {
+    width: 80%;
+  }
 }
