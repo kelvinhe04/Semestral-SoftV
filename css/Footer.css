@@ -1,177 +1,196 @@
-
 /*============= GENERAL==================*/
 
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
   font-size: 18px;
   box-sizing: border-box;
 }
 
-
-.container-gris{
+.container-gris {
   background-color: #d7d7d7;
   padding: 40px 110px;
-    margin-top: 60px;
+  margin-top: 60px;
 }
-.container2{
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-   width: 100%;
-    
-    
-    
-}
-
-.contenedor-izquierda{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  
-}
-.contenedor-izquierda a{
-    text-decoration: none;
-    color: #1A2F2D;
-    font-weight: 600;
-    width: 300px;
-
-}
-
-.contenedor-centro img{
-    width: 300px;
-
-}
-.contenedor-derecha{
-    width: 300px;
-    display: flex;
-    gap: 40px;
-    justify-content:right;
-    height: 120px;
-    align-items: start;
-  
-}
-.contenedor-derecha a{
-
-    display: flex;
-    align-items: center;
-    
-}
-.contenedor-derecha a img{
-    width: 35px;
-}
-
-/*============= COPYRIGHT==================*/
-.copyright-section{
-    background-color: #1A2F2D;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    margin: 0;
-
-}
-.copyright-section p{
-    font-family: "ABeeZee", sans-serif;
-    margin: 0;
-    font-size: 1rem;
-  
-}
-
-
-@media (max-width: 1150px) {
-
-   
-
 .container2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-  gap: 0; /* Sin espacio entre las celdas */
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .contenedor-izquierda {
-  
-  grid-column: 1; /* Se queda en la primera columna */
-  grid-row: 1 / 3; /* Ocupa dos filas */
-  padding: 10px;
-}
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
 
-.contenedor-centro {
-  
-  grid-column: 1 / 3; /* Ocupa ambas columnas */
-  grid-row: 3; /* Se queda en la tercera fila */
-  padding: 10px;
-  display: flex; /* Usamos flexbox */
-  justify-content: center; /* Centra la imagen horizontalmente */
-  align-items: center; /* Centra la imagen verticalmente */
 }
+.contenedor-izquierda a {
+  text-decoration: none;
+  color: #1a2f2d;
+  font-weight: 600;
+  position: relative;
+  width: fit-content; /* Ajusta el ancho del enlace al contenido */
 
-.contenedor-derecha {
- 
-  grid-column: 2; /* En la segunda columna */
-  grid-row: 1 / 3; /* Ocupa dos filas al lado derecho */
-  padding: 10px;
+
+}
+.contenedor-izquierda a::after {
+  content: "";
+  position: absolute;
   width: 100%;
-  
+  height: 3px;
+  background: #1a2f2d;
+  border-radius: 5px;
+  left: 0;
+  bottom: -1px;
+  transform-origin: right;
+  transform: scale(0);
+  transition: transform .5s;
+
+}
+
+.contenedor-izquierda a:hover::after {
+  transform-origin: left;
+  transform: scale(1);
   
 }
-.copyright-section p{
+
+.contenedor-centro img {
+  width: 300px;
+}
+.contenedor-derecha {
+  width: 300px;
+  display: flex;
+  gap: 40px;
+  justify-content: right;
+  height: 120px;
+  align-items: start;
+}
+.contenedor-derecha a {
+  display: flex;
+  align-items: center;
+}
+.contenedor-derecha a img {
+  width: 35px;
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para cambiar el color en los SVG */
+.contenedor-derecha a:hover img {
+  transform: scale(1.2); /* Aumenta ligeramente el tamaño */
+
+}
+
+/*============= COPYRIGHT==================*/
+.copyright-section {
+  background-color: #1a2f2d;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin: 0;
+}
+.copyright-section p {
+  font-family: "ABeeZee", sans-serif;
+  margin: 0;
+  font-size: 1rem;
+}
+
+@media (max-width: 1150px) {
+  .container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 0; /* Sin espacio entre las celdas */
+  }
+
+  .contenedor-izquierda {
+    grid-column: 1; /* Se queda en la primera columna */
+    grid-row: 1 / 3; /* Ocupa dos filas */
+    padding: 10px;
+  }
+
+  .contenedor-centro {
+    grid-column: 1 / 3; /* Ocupa ambas columnas */
+    grid-row: 3; /* Se queda en la tercera fila */
+    padding: 10px;
+    display: flex; /* Usamos flexbox */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+  }
+
+  .contenedor-derecha {
+    grid-column: 2; /* En la segunda columna */
+    grid-row: 1 / 3; /* Ocupa dos filas al lado derecho */
+    padding: 10px;
+    width: 100%;
+  }
+  .copyright-section p {
     font-size: 0.8rem;
-  
-}
-
-
-
+  }
 }
 
 @media (max-width: 755px) {
-  .container-gris{
+  .container-gris {
     padding: 20px 0 0 0;
-
   }
-  .container2{
+  .container2 {
     width: 80%;
-    margin:  0 auto;
+    margin: 0 auto;
   }
-  .contenedor-derecha{
+  .contenedor-derecha {
     flex-direction: column;
-     padding: 0;
+    padding: 0;
     width: auto;
     height: auto;
-    align-items: end  ;
+    align-items: end;
     gap: 15px;
   }
-  .contenedor-derecha .img{
+  .contenedor-derecha .img {
     width: 100%;
     display: flex;
     justify-content: end;
-
   }
-  .contenedor-derecha .img img{
+  .contenedor-derecha .img img {
     width: 25px;
   }
 
-  .contenedor-centro img{
+  .contenedor-centro img {
     width: 250px;
-
-}
-.contenedor-izquierda{
-  padding: 0;
-}
-.contenedor-izquierda a{
+  }
+  .contenedor-izquierda {
+    padding: 0;
+  }
+  .contenedor-izquierda a {
     width: 200px;
     font-size: 0.8rem;
-
-}
-.copyright-section{
-  padding: 10px 0;
-}
-.copyright-section p{
+  }
+  .copyright-section {
+    padding: 10px 0;
+  }
+  .copyright-section p {
     font-size: 0.6rem;
-  
+  }
+
+  .contenedor-izquierda a {
+  width: fit-content; /* Ajusta el ancho del enlace al contenido */
+
+
 }
+.contenedor-izquierda a::after {
+
+  height: 1px;
 
 
+}
+.contenedor-izquierda {
+
+  width: auto;
+
+}
+/* Efecto hover para cambiar el color en los SVG */
+.contenedor-derecha a:hover img {
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+
+}
 }
