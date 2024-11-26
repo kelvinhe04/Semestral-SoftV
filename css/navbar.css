@@ -27,7 +27,6 @@
   outline: none; /* Elimina el contorno cuando está enfocado o activo */
 }
 
-
 .navbar {
   width: 100%;
   display: flex;
@@ -141,6 +140,8 @@
 .navbar-brand:hover {
   color: #d9d3d3;
 }
+
+/*=============Barra de Busqueda==================*/
 .search-container {
   display: flex;
   align-items: center;
@@ -176,6 +177,7 @@
 .search-input::placeholder {
   color: #888;
 }
+
 /* Asegúrate de que el menú desplegado no empuje el contenido */
 .navbar-collapse {
   position: absolute;  /* Cambiar a 'absolute' o 'fixed' para evitar que empuje el contenido */
@@ -185,9 +187,6 @@
   background-color: #558a7a; /* Ajusta el fondo si es necesario */
   z-index: 1000;  /* Asegúrate de que el menú quede por encima del contenido */
 }
-
-
-
 
 
 @media (max-width: 992px){
