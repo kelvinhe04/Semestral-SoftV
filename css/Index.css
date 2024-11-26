@@ -144,20 +144,33 @@
 .metodos {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
   flex-wrap: wrap;
+  align-items: center;
+}
+.metodos img {
+  transition: transform 0.3s ease; /* Transición suave */
+}
+.metodos img:hover {
+  transform: scale(1.2); /* Aumenta ligeramente el tamaño */
 }
 
 .metodo1 img {
-  width: 40px; /*ajustar tamaño imagen*/
-  height: 17px;
-  margin: 10px;
+  width: 60px; /*ajustar tamaño imagen*/
+  height: 30px;
+  object-fit: contain;
 }
 
 .metodo2 img {
-  width: 50px; /*ajustar tamaño imagen*/
-  height: 20px;
-  margin: 10px;
+  width: 60px; /*ajustar tamaño imagen*/
+  height: 30px;
+  object-fit: contain;
+}
+.metodo1 img:nth-child(1),
+.metodo1 img:nth-child(2),
+.metodo2 img:nth-child(4) {
+  width: 80px;
+  height: 50px;
 }
 
 /*============= SECCION DE EMAIL==================*/
@@ -295,6 +308,10 @@
     margin: 30px auto;
     width: 93%;
   }
+  .promotions-section {
+    width: 93%;
+    margin: 100px auto 0 auto;
+  }
 }
 
 @media (max-width: 920px) {
@@ -332,21 +349,50 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 60px 50px;
   }
   .promotions-section-izquierda {
     width: 100%;
   }
   .promotions-section h3 {
     margin: 0 0 10px; /* Añade más espacio debajo */
-    text-align: left;
+    font-size: 25px; /* Incrementa el tamaño del título */
   }
 
   .promotions-section p {
     margin: 0 0 25px; /* Mantiene espacio debajo del párrafo */
-    text-align: left;
+    font-size: 15px; /* Incrementa el tamaño del texto */
+  }
+
+  .promotions-section form {
+    width: 80%;
+  }
+  .titulo {
+    font-size: 1.5rem;
   }
 }
 
+@media (max-width: 630px) {
+  .promotions-section {
+    padding: 60px 10px;
+  }
+
+  .metodo1 img {
+    width: 40px; /*ajustar tamaño imagen*/
+    height: 20px;
+  }
+
+  .metodo2 img {
+    width: 40px; /*ajustar tamaño imagen*/
+    height: 20px;
+  }
+  .metodo1 img:nth-child(1),
+  .metodo1 img:nth-child(2),
+  .metodo2 img:nth-child(4) {
+    width: 60px;
+    height: 40px;
+  }
+}
 @media (max-width: 393px) {
   .main-character {
     width: 200px; /* Aumenta el ancho para hacer la imagen más grande */
@@ -385,26 +431,57 @@
   }
   .centrar p,
   .centrar p strong {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #1a2f2d;
+  }
+  .promotions-section {
+    padding: 20px 10px;
   }
   .product-item {
     width: 100px; /* Ajusta el tamaño del contenedor */
     height: 100px; /* Ajusta el tamaño del contenedor */
   }
-  .promotions-section {
-    padding: 10px 10px 15px 10px;
-    width: 97%;
-    margin: 100px auto 0 auto;
-  }
   .promotions-section h3 {
-    font-size: 25px; /* Incrementa el tamaño del título */
+    font-size: 22px; /* Incrementa el tamaño del título */
   }
 
   .promotions-section p {
-    font-size: 15px; /* Incrementa el tamaño del texto */
+    font-size: 14px; /* Incrementa el tamaño del texto */
   }
   .promotions-section form {
     width: 80%;
+  }
+  .promotions-section input[type="email"] {
+    padding: 5px;
+    width: 180px;
+  }
+  .promotions-section button {
+    padding: 5px 10px;
+    width: 180px; /* Asegura que el botón tenga el mismo ancho que el input */
+  }
+  .titulo {
+    font-size: 1.2rem;
+  }
+  .metodos img:hover {
+    transform: scale(1.2); /* Aumenta ligeramente el tamaño */
+  }
+
+  .metodo1 img {
+    width: 30px; /*ajustar tamaño imagen*/
+    height: 15px;
+  }
+
+  .metodo2 img {
+    width: 30px; /*ajustar tamaño imagen*/
+    height: 15px;
+  }
+  .metodo1 img:nth-child(1),
+  .metodo1 img:nth-child(2),
+  .metodo2 img:nth-child(4) {
+    width: 50px;
+    height: 35px;
+  }
+  .pago {
+    padding: 10px 0 5px 0;
   }
 }
