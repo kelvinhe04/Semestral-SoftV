@@ -222,7 +222,7 @@
 }
 
 .promotions-section button {
-  background-color: #C5414B; /* Fondo rojo */
+  background-color: #c5414b; /* Fondo rojo */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -293,7 +293,7 @@
   }
   .banner {
     margin: 30px auto;
-    width: 97%;
+    width: 93%;
   }
 }
 
