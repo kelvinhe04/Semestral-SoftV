@@ -203,7 +203,7 @@
 
 .promotions-section input[type="email"] {
   padding: 10px;
-  border: none;
+  border: 2px solid white; /* Border color por defecto */
   border-radius: 5px;
   font-size: 14px;
   width: 100%; /* Asegura que ocupe el máximo ancho posible */
@@ -214,6 +214,11 @@
 /* Centrar solo el placeholder */
 .promotions-section input[type="email"]::placeholder {
   text-align: center; /* Centra el texto del placeholder */
+}
+/* Cambiar el color del borde cuando el input está enfocado */
+.promotions-section input[type="email"]:focus {
+  border-color: #91cbfa; /* El color que desees para el borde cuando el input esté enfocado */
+  outline: none; /* Eliminar el borde del contorno por defecto (opcional) */
 }
 
 .promotions-section button {
