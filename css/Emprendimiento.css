@@ -1,77 +1,86 @@
 /*============= GENERAL==================*/
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif !important;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 18px;
 }
 
 /*============= SECCION DE EMPRENIDMIENTOS ==================*/
-.titulos {
-  text-align: center;
-  margin: 20px 0;
-  font-size: 5rem; /* Tamaño aumentado */
-  line-height: 1.3;
-  color: #1A2F2D;
-}
 
-.titulos .negrita {
+.font-500 {
+  font-weight: 500;
+}
+.font-700 {
   font-weight: 700;
 }
-
-.titulo2 h1{
+.titulos {
   text-align: center;
-  font-size: 4rem;
-  font-weight: 800;
-  color: #4e8672;
-  font-family: 'ABeeZee', sans-serif;
+  margin: 50px 0 0 0;
 }
 
-.tabla {
-  width: 80%;
+.titulos p span {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.titulo2 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 650;
+  color: #4e8672;
+  font-family: "Syne", sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+.contenedor-emprendimientos {
+  width: 55%;
   margin: 0 auto;
   border-collapse: collapse;
 }
 
 .tabla tr {
   margin-bottom: 20px;
-  flex-direction: column;
 }
-
-.tabla td {
-  padding: 60px;
-  vertical-align: top;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-.tabla h3 {
-  font-size: 2rem;
-  color: #558A7A;
-}
-
-.tabla p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #1A2F2D;
-  text-align: justify;
-  margin: 10px 0;
-}
-
-.tabla img {
-  width: 400px;
-  height: auto;
+.emprendimiento .img img {
+  width: 350px;
+  height: 300px;
   border-radius: 15px;
-  display: block;
-  margin: 0 auto;
+  object-fit: cover;
+}
+.descripcion-emprendimiento {
+  width: 60%;
+
 }
 
-blockquote {
+.descripcion-emprendimiento h3 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #1a2f2d;
+  font-family: "ABeeZee", sans-serif !important;
+}
+.descripcion-emprendimiento .verde {
+  color: #558a7a !important;
+}
+
+.descripcion-emprendimiento p {
+  font-size: 1.1rem;
+  line-height: 1.1;
+  color: #1a2f2d;
+  margin: 20px 0 60px 0;
+  font-weight: 550;
+  font-family: "ABeeZee", sans-serif !important;
+}
+.descripcion-emprendimiento blockquote {
   margin: 30px;
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-family: "ABeeZee", sans-serif !important;
+  color: #1a2f2d;
+  margin: 0; /* Elimina la sangría y márgenes */
 }
-
 
 /*============= SECCION DE EMAIL ==================*/
 .promotions-section {
@@ -81,14 +90,12 @@ blockquote {
   text-align: center;
   color: white;
   font-family: Arial, sans-serif;
-  margin: 100px 60px 0 60px  ;
-  
+  margin: 100px 60px 0 60px;
+
   display: flex;
 }
-.promotions-section-izquierda{
+.promotions-section-izquierda {
   width: 60%;
-  
-  
 }
 .promotions-section h3 {
   font-size: 30px; /* Incrementa el tamaño del título */
@@ -104,10 +111,9 @@ blockquote {
   margin: 0 0 5px; /* Mantiene espacio debajo del párrafo */
   text-align: left; /* Alinea el párrafo a la izquierda */
   color: white;
-  text-align: center; 
-  font-family: 'ABeeZee', sans-serif;
+  text-align: center;
+  font-family: "ABeeZee", sans-serif;
 }
-
 
 .promotions-section form {
   display: flex;
@@ -115,7 +121,6 @@ blockquote {
   align-items: center; /* Alinea todo a la derecha */
   gap: 15px; /* Espacio entre el input y el botón */
   width: 40%;
-
 }
 
 .promotions-section input[type="email"] {
@@ -140,9 +145,8 @@ blockquote {
   width: 100%; /* Asegura que el botón tenga el mismo ancho que el input */
   max-width: 300px; /* Limita el ancho máximo */
 }
-.promotions-section button:hover{
+.promotions-section button:hover {
   background-color: #ad3943;
-
 }
 
 /*============= scroll bar==================*/
@@ -166,52 +170,68 @@ blockquote {
   background: #605a57;
 }
 
-/*============= Media Queries para Responsividad==================*/
-@media (max-width: 768px) {
-  /* Ajustes para tablets y móviles */
-  .titulos {
-    font-size: 3rem; /* Tamaño del texto reducido */
-  }
 
-  .titulo2 {
-    font-size: 2.5rem; /* Tamaño del texto reducido */
-  }
 
-  .tabla tr {
-    flex-direction: column; /* Acomoda los elementos en columnas para pantallas pequeñas */
-  }
 
-  .tabla td {
-    padding: 10px; /* Reduce el espacio interno */
-    font-size: 0.9rem; /* Tamaño de texto ajustado */
-  }
 
-  .promotions-section {
-    flex-direction: column; /* Apila los elementos verticalmente */
-    margin: 20px 10px; /* Margen reducido */
-  }
 
-  .promotions-section-izquierda {
-    text-align: center; /* Centra el texto en dispositivos pequeños */
-  }
+
+
+@media (max-width: 920px){
+
+  
+.promotions-section {
+
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.promotions-section-izquierda{
+  width: 100%;
+  
+  
+}
+.promotions-section h3 {
+  margin: 0 0 10px; /* Añade más espacio debajo */
+  text-align: left;
 }
 
-@media (max-width: 480px) {
-  /* Ajustes adicionales para pantallas muy pequeñas */
-  .titulos {
-    font-size: 2.5rem;
-  }
+.promotions-section p {
+  margin: 0 0 25px; /* Mantiene espacio debajo del párrafo */
+  text-align: left; 
+  
+}
 
-  .titulo2 {
-    font-size: 2rem;
-  }
 
-  .tabla img {
-    max-width: 200px; /* Reduce el tamaño máximo de las imágenes */
-  }
 
-  .promotions-section input[type="email"],
-  .promotions-section button {
-    max-width: 100%; /* Asegura que los inputs ocupen todo el ancho */
-  }
+
+
+}
+
+@media (max-width: 393px) {
+
+
+.promotions-section {
+  padding: 10px 10px 15px 10px;
+  width: 97%;
+  margin: 100px auto 0 auto ;
+}
+.promotions-section h3 {
+  font-size: 25px; /* Incrementa el tamaño del título */
+
+}
+
+.promotions-section p {
+  font-size: 15px; /* Incrementa el tamaño del texto */
+
+}
+.promotions-section form {
+
+  width: 80%;
+
+}
+
+
+
 }
