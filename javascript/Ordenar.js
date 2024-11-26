@@ -70,19 +70,48 @@ async function cargarProductos() {
 
   try {
     const response = await fetch(apiUrl);
+
+    // Verificar si la respuesta es válida
     if (!response.ok) {
       throw new Error("Error al obtener los productos");
     }
 
+    // Convertir la respuesta en JSON
     const productos = await response.json();
-    productosOriginales = productos; // Guardamos todos los productos en una variable global
 
-    // Cargar todos los productos al principio (sin filtro)
-    mostrarProductos(productos);
+    // Si no hay productos
+    if (!productos || productos.length === 0) {
+      mostrarPantallaVacia("No hay productos disponibles");
+    } else {
+      ocultarPantalla(); // Ocultamos la pantalla si hay productos
+      mostrarProductos(productos); // Mostramos los productos
+    }
   } catch (error) {
     console.error("Error:", error);
+    mostrarPantallaVacia(
+      "Error al obtener los datos. Intenta de nuevo más tarde."
+    );
   }
 }
+
+// Mostrar el mensaje cuando no hay productos o hay un error
+function mostrarPantallaVacia(mensaje) {
+  const pantalla = document.querySelector(".pantalla");
+  pantalla.classList.add("vacia");
+  pantalla.textContent = mensaje;
+}
+
+// Ocultar la pantalla cuando hay productos
+function ocultarPantalla() {
+  const pantalla = document.querySelector(".pantalla");
+  pantalla.classList.add("oculta");
+
+  // Opcional: Eliminar del DOM después de la animación
+  setTimeout(() => {
+    pantalla.remove();
+  }, 300); // El mismo tiempo que la animación de transición
+}
+
 ////////////////////////////////////////////////////////
 
 //PASAR LOS PRODUCTOS DE ORDERNAR.HTML A CARRITO.HTML//

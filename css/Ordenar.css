@@ -237,6 +237,28 @@ background-color: #ad3943;
 .dropdown-content.show {
   display: block;
 }
+  .pantalla {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 1.5rem;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  /* Estilo para cuando no hay productos o hay un error */
+  .pantalla.vacia {
+    background-color: #ccc;
+    color: #777;
+  }
+
+  /* Ocultar la pantalla con animación */
+  .pantalla.oculta {
+    opacity: 0;
+    visibility: hidden;
+  }
 
 
 /*============= scroll bar==================*/
