@@ -230,7 +230,14 @@
       </div>
 
       <form action="https://formsubmit.co/kelvinhe04@gmail.com" method="POST">
-        <input type="email" name="email" placeholder="Déjanos tu correo aquí"  />
+        <input
+          type="email"
+          name="email"
+          placeholder="Déjanos tu correo aquí"
+          required
+          pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+          title="Por favor ingresa un correo electrónico válido (debe contener '@')."
+        />
         <button type="submit" value="Enviar">Suscribirme -></button>
       </form>
     </div>
