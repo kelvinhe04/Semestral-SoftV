@@ -146,7 +146,7 @@ body .titulo2 h1 {
 }
 
 .promotions-section button {
-  background-color: #C5414B; /* Fondo rojo */
+  background-color: #c5414b; /* Fondo rojo */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -191,6 +191,13 @@ body .titulo2 h1 {
     width: 70%;
   }
 }
+@media (max-width: 1420px) {
+  .promotions-section {
+    width: 93%;
+    margin: 100px auto 0 auto;
+  }
+}
+
 @media (max-width: 1050px) {
   .emprendimiento .img img {
     width: 300px;
@@ -244,18 +251,23 @@ body .titulo2 h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 60px 50px;
   }
   .promotions-section-izquierda {
     width: 100%;
   }
   .promotions-section h3 {
     margin: 0 0 10px; /* Añade más espacio debajo */
-    text-align: left;
+    font-size: 25px; /* Incrementa el tamaño del título */
   }
 
   .promotions-section p {
     margin: 0 0 25px; /* Mantiene espacio debajo del párrafo */
-    text-align: left;
+    font-size: 15px; /* Incrementa el tamaño del texto */
+  }
+
+  .promotions-section form {
+    width: 80%;
   }
 }
 @media (max-width: 700px) {
@@ -277,6 +289,11 @@ body .titulo2 h1 {
   .contenedor-titulos {
     width: 90%;
     margin: 0 auto;
+  }
+}
+@media (max-width: 630px) {
+  .promotions-section {
+    padding: 60px 10px;
   }
 }
 
@@ -305,18 +322,28 @@ body .titulo2 h1 {
     font-size: 1.5rem;
   }
   .promotions-section {
-    padding: 10px 10px 15px 10px;
-    width: 97%;
-    margin: 100px auto 0 auto;
+    padding: 20px 10px;
+  }
+  .product-item {
+    width: 100px; /* Ajusta el tamaño del contenedor */
+    height: 100px; /* Ajusta el tamaño del contenedor */
   }
   .promotions-section h3 {
-    font-size: 25px; /* Incrementa el tamaño del título */
+    font-size: 22px; /* Incrementa el tamaño del título */
   }
 
   .promotions-section p {
-    font-size: 15px; /* Incrementa el tamaño del texto */
+    font-size: 14px; /* Incrementa el tamaño del texto */
   }
   .promotions-section form {
     width: 80%;
+  }
+  .promotions-section input[type="email"] {
+    padding: 5px;
+    width: 180px;
+  }
+  .promotions-section button {
+    padding: 5px 10px;
+    width: 180px; /* Asegura que el botón tenga el mismo ancho que el input */
   }
 }
