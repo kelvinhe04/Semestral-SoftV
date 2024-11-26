@@ -289,11 +289,15 @@ h1 {
   #productos-container {
     justify-content: center; /* Alinea las cartas a la izquierda */
   }
+  .pantalla {
+    min-height: 60vh;
+  
+  }
 }
 
 @media (max-width: 393px) {
   .pantalla {
-    min-height: 30vh;
+    min-height: 40vh;
     font-size: 1rem;
   }
   .pantalla.vacia {
