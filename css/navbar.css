@@ -7,6 +7,19 @@
   font-size: 18px;
   box-sizing: border-box;
 }
+/* Eliminar bordes y sombras en el navbar */
+.navbar {
+  box-shadow: none; /* Elimina cualquier sombra */
+  border: none; /* Elimina el borde */
+}
+
+.navbar-nav .nav-link {
+  border: none; /* Elimina bordes en los enlaces */
+}
+
+.navbar-toggler {
+  border: none; /* Elimina el borde del icono del menú en dispositivos móviles */
+}
 
 .navbar {
   width: 100%;
