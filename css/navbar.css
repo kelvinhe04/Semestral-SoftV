@@ -19,7 +19,14 @@
 
 .navbar-toggler {
   border: none; /* Elimina el borde del icono del menú en dispositivos móviles */
+  outline: none; /* Elimina el contorno cuando se hace clic */
 }
+
+.navbar-toggler:focus, .navbar-toggler:active {
+  border: none; /* Elimina el borde cuando está enfocado o activo */
+  outline: none; /* Elimina el contorno cuando está enfocado o activo */
+}
+
 
 .navbar {
   width: 100%;
