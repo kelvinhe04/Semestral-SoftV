@@ -18,7 +18,7 @@
   
 }
 p {
-  font-size: 0.8em !important; /* Igual al tamaño base de fuente (normalmente 16px) */
+  font-size: 1em !important; /* Igual al tamaño base de fuente (normalmente 16px) */
   font-weight: normal !important;
   line-height: 0.4 !important;
 }
@@ -29,14 +29,11 @@ p {
 #carrito-container h1{
   margin-bottom: 20px;
 }
-#carrito-container p{
-  font-size: 1em !important;
 
-}
 
 /*============= CONTENERDOR DE LA PAGINA==================*/
 .pantalla {
-  height: 100vh;
+  min-height: 100vh;
 }
 .contenedor {
   width: 77%;
@@ -93,7 +90,6 @@ p {
 /*============= TODOS LOS PRODUCTOS DENTRO DEL CARRO==================*/
 #carrito-container {
   width: 100%; /* Usa todo el ancho disponible, pero lo limita a su contenedor */
-
   background-color: #558a7a;
   border-radius: 10px;
   padding: 20px;
@@ -102,6 +98,7 @@ p {
   flex-wrap: wrap; /* Permite que las cartas se acomoden en múltiples líneas si es necesari*/
   gap: 19px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
+  min-width: 300px;
 }
 #carrito-container.vacio {
   display: block; /* Cambiar el comportamiento cuando está vacío */
@@ -130,7 +127,7 @@ p {
   margin: 8px 0;
 }
 .producto p {
-  font-size: 14px;
+  font-size: 14px !important;
   color: #555;
 }
 /*============= IZQUIERDA(DESCRIPCION Y PRECIO PRODUCTO) Y DERECHA(BOTON DE INCREMENTAR Y DECREMENTAR)==================*/
@@ -219,4 +216,70 @@ p {
 ::-webkit-scrollbar-thumb:hover {
   background: #605a57;
 }
+
+@media (max-width: 1607px) {
+  #carrito-container {
+  width: 100%; /* Usa todo el ancho disponible, pero lo limita a su contenedor */
+  background-color: #558a7a;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px 0;
+  display: flex;
+  flex-wrap: wrap; /* Permite que las cartas se acomoden en múltiples líneas si es necesari*/
+  gap: 19px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
+
+
+  justify-content: center;
+}
+
+
+}
+@media (max-width: 1323px) {
+ #carrito-container.vacio p  {
+ 
+  line-height: 1.5 !important;
+}
+
+}
+@media (max-width: 1200px) {
+  .contenedor{
+    width: 93%;
+  }
+
+
+}
+
+@media (max-width: 720px) {
+  .contenedor{
+    flex-direction: column;
+    gap: 0;
+  }
+   #carrito-container {
+  width: 55%; /* Usa todo el ancho disponible, pero lo limita a su contenedor */
+  margin: 30px auto;
+ 
+}
+.contenedor-precio {
+  margin: 30px auto;
+  min-width: 250px;
+}
+
+
+}
+
+
+@media (max-width: 393px) {
+  #carrito-container.vacio h1 {
+  font-size: 1.5rem;
+  margin: 5px 0 15px 0;
+}
+
+
+}
+
+
+
+
+
 
