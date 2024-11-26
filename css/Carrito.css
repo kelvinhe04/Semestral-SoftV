@@ -261,4 +261,8 @@ p {
   p {
     font-size: 0.8em !important; /* Igual al tamaño base de fuente (normalmente 16px) */
   }
+
+  #carrito-container a {
+    font-size: 1em !important; /* Igual al tamaño base de fuente (normalmente 16px) */
+  }
 }
