@@ -110,7 +110,7 @@ h1 {
   cursor: pointer; /* Cambia el cursor a una mano cuando pasas por encima */
 }
 .dropdown-btn:hover {
-  background-color: #ad3943;
+  background-color: #9e353d;
 }
 .dropdown {
   position: relative;
@@ -193,7 +193,7 @@ h1 {
   transition: background-color 0.3s ease;
 }
 #btn-trash:hover {
-  background-color: #ad3943;
+  background-color: #9e353d;
 }
 .fa-solid {
   color: white;

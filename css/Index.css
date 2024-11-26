@@ -217,7 +217,7 @@
 }
 
 .promotions-section button {
-  background-color: #d84c4c; /* Fondo rojo */
+  background-color: #C5414B; /* Fondo rojo */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -229,7 +229,7 @@
   max-width: 300px; /* Limita el ancho máximo */
 }
 .promotions-section button:hover {
-  background-color: #ad3943;
+  background-color: #9e353d;
 }
 
 /*============= scroll bar==================*/
