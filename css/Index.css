@@ -462,9 +462,6 @@
   .titulo {
     font-size: 1.2rem;
   }
-  .metodos img:hover {
-    transform: scale(1.2); /* Aumenta ligeramente el tamaño */
-  }
 
   .metodo1 img {
     width: 30px; /*ajustar tamaño imagen*/

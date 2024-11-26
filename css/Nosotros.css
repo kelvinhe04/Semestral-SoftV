@@ -7,7 +7,6 @@
   box-sizing: border-box;
 }
 
-
 /*============= SOBRE NOSOTROS==================*/
 .sobre-nosotros {
   position: relative; /* Para posicionar elementos de forma relativa a este contenedor */
@@ -85,7 +84,6 @@ ol li {
   font-size: 1.35rem;
   margin-bottom: 60px; /* Espacio entre los elementos */
   font-family: "ABeeZee", sans-serif;
-  
 }
 .flotante {
   position: absolute; /* Permite que flote encima de la imagen */
@@ -163,14 +161,11 @@ ol li {
 
   .flotante p {
     font-size: 1rem;
-    
   }
   .gracias-contenido p {
     font-size: 1.2rem;
   }
 }
-
-
 
 @media (max-width: 1420px) {
   .sobre-nosotros h1 {
@@ -190,164 +185,126 @@ ol li {
   }
 }
 
-
-
-
 @media (max-width: 1120px) {
   .descripcion {
     flex-direction: column;
     gap: 0;
   }
-   .sobre-nosotros {
-
-  height: 350px; /* Ajusta el alto según sea necesario */
-
+  .sobre-nosotros {
+    height: 350px; /* Ajusta el alto según sea necesario */
+  }
+  .sobre-nosotros img {
+    height: 350px;
+  }
 }
-.sobre-nosotros img {
-
-  height: 350px;
-
-}
- 
-}
-
-
-
 
 @media (max-width: 768px) {
   .sobre-nosotros {
-
-  height: 300px; /* Ajusta el alto según sea necesario */
-
-}
-.sobre-nosotros img {
-
-  height: 300px;
-
-}
+    height: 300px; /* Ajusta el alto según sea necesario */
+  }
+  .sobre-nosotros img {
+    height: 300px;
+  }
   .sobre-nosotros h1 {
     font-size: 3.6rem;
   }
   .contenedor-valores {
-  display: flex;
-  justify-content: center;
-  padding: 80px 80px 100px 80px;
-}
+    display: flex;
+    justify-content: center;
+    padding: 80px 80px 100px 80px;
+  }
 
   .valores h1 {
     font-size: 3.4rem;
   }
   ol li {
     font-size: 1.1rem;
-    
   }
   .img-empleado {
     display: none; /* Elimina el contenedor y evita que ocupe espacio */
   }
   .flotante {
-  padding: 20px 50px; /* Espaciado interno */
-
+    padding: 20px 50px; /* Espaciado interno */
+  }
 }
-}
-
-
-
 
 @media (max-width: 393px) {
   .sobre-nosotros {
-
-  height: 200px; /* Ajusta el alto según sea necesario */
-
-}
-.sobre-nosotros img {
-
-  height: 200px;
-
-}
-.sobre-nosotros h1 {
+    height: 200px; /* Ajusta el alto según sea necesario */
+  }
+  .sobre-nosotros img {
+    height: 200px;
+  }
+  .sobre-nosotros h1 {
     font-size: 2rem;
   }
   .contenedor-parrafo {
- 
     width: 93%;
     margin: 0 auto;
     padding: 0;
-
   }
 
   .contenedor-blanco p {
-  font-size: 0.8rem;
+    font-size: 0.8rem;
+  }
+  .contenedor-blanco {
+    margin-top: 30px;
+    padding: 0;
+    min-width: 0;
+  }
+  .contenedor-para-gris {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  .contenedor-gris {
+    padding: 15px;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
 
-}
-.contenedor-blanco {
-  margin-top: 30px;
-  padding: 0;
-  min-width: 0;
-
- 
-}
-.contenedor-para-gris {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-
-}
-.contenedor-gris {
-  padding: 15px;
-  width: 100%;
-  min-width: 0;
-  margin: 0;
-  
-}
-
-.contenedor-gris p {
-  font-size: 0.8rem;
-
-}
-.contenedor-valores {
-  margin-top: 40px;
-  padding: 20px 0 50px 0;
-  position: relative;
-}
-.valores h1 {
+  .contenedor-gris p {
+    font-size: 0.8rem;
+  }
+  .contenedor-valores {
+    margin-top: 40px;
+    padding: 20px 0 50px 0;
+    position: relative;
+  }
+  .valores h1 {
     font-size: 1.8rem;
+    text-align: center;
   }
   ol li {
     font-size: 0.8rem;
-    
   }
   .flotante {
+    bottom: -74px; /* Ajusta la posición desde la parte inferior */
+    padding: 10px 30px 0 30px; /* Espaciado interno */
+    max-width: 0; /* Limita el ancho del párrafo */
+    min-width: 93%;
+    margin: 0 auto;
+  }
 
-  bottom: -74px; /* Ajusta la posición desde la parte inferior */
-  padding: 10px 30px; /* Espaciado interno */
-  max-width: 0; /* Limita el ancho del párrafo */
-  min-width: 93%;
-  margin: 0 auto;
- 
-}
-
-.flotante p {
+  .flotante p {
     font-size: 0.8rem;
-  
   }
 
   .gracias {
-  padding: 160px 0 70px 0;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-}
+    padding: 160px 0 70px 0;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.gracias-contenido {
-  max-width: 0;
-  padding: 0 30px; /* Espaciado interno */
-  min-width: 100%;
- 
-}
-.gracias-contenido p {
-  font-size: 0.8rem;
-}
-
+  .gracias-contenido {
+    max-width: 0;
+    padding: 0 30px; /* Espaciado interno */
+    min-width: 100%;
+  }
+  .gracias-contenido p {
+    font-size: 0.8rem;
+  }
 }
