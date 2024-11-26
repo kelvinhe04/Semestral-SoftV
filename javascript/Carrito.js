@@ -35,7 +35,6 @@ function cargarFooter() {
     })
     .then((data) => {
       document.getElementById("footer-container").innerHTML = data;
-      actualizarContadorCarrito(); // Llamar después de cargar el navbar
     })
     .catch((err) => console.error("Error:", err));
 }

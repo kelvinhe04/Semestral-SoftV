@@ -33,6 +33,41 @@
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap"
     rel="stylesheet"
   </head>
+  <script>
+    function actualizarContadorCarrito() {
+      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      const contadorCarritoSpan = document.getElementById("contador-carrito");
+
+      if (carrito.length > 0) {
+        const totalProductos = carrito.reduce(
+          (acc, producto) => acc + producto.cantidad,
+          0
+        );
+        contadorCarritoSpan.textContent = totalProductos;
+        contadorCarritoSpan.style.display = "inline-flex";
+      } else {
+        contadorCarritoSpan.style.display = "none";
+      }
+    }
+
+    function cargarNavbar() {
+      fetch("navbar.html")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Error al cargar navbar " + response.status);
+          }
+          return response.text();
+        })
+        .then((data) => {
+          document.getElementById("navbar-container").innerHTML = data;
+          actualizarContadorCarrito(); // Llamar después de cargar el navbar
+        })
+        .catch((err) => console.error("Error:", err));
+    }
+
+    // Cargar el navbar después de que el DOM esté listo
+    document.addEventListener("DOMContentLoaded", cargarNavbar);
+  </script>
   <body>
     <div id="navbar-container"></div>
 
