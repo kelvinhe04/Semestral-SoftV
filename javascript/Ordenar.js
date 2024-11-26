@@ -1,4 +1,3 @@
-
 ////////////////////////////////////////////////////////
 
 //NAVBAR//
@@ -19,8 +18,6 @@ function cargarNavbar() {
     })
     .catch((err) => console.error("Error:", err));
 }
-
-
 
 ////////////////////////////////////////////////////////
 
@@ -105,11 +102,6 @@ function mostrarPantallaVacia(mensaje) {
 function ocultarPantalla() {
   const pantalla = document.querySelector(".pantalla");
   pantalla.classList.add("oculta");
-
-  // Opcional: Eliminar del DOM después de la animación
-  setTimeout(() => {
-    pantalla.remove();
-  }, 300); // El mismo tiempo que la animación de transición
 }
 
 ////////////////////////////////////////////////////////

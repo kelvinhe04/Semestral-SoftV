@@ -37,13 +37,11 @@ body .titulo2 h1 {
 .contenedor-emprendimientos {
   width: 55%;
   margin: 0 auto;
-
 }
 .emprendimiento {
   display: flex;
   margin-top: 70px;
   justify-content: space-between;
-
 }
 .emprendimiento .img {
   width: 40%;
@@ -57,7 +55,6 @@ body .titulo2 h1 {
 }
 .descripcion-emprendimiento {
   width: 60%;
-
 }
 
 .descripcion-emprendimiento h3 {
@@ -197,16 +194,11 @@ body .titulo2 h1 {
     min-width: 300px;
   }
   .descripcion-emprendimiento p {
-
-  margin: 20px 0 30px 0;
- 
-}
-
-
+    margin: 20px 0 30px 0;
+  }
 }
 
 @media (max-width: 920px) {
-
   .titulos p span {
     font-size: 1.4rem;
   }
@@ -216,18 +208,13 @@ body .titulo2 h1 {
   }
   .descripcion-emprendimiento h3 {
     font-size: 1rem;
-    
   }
-
 
   .descripcion-emprendimiento p {
     font-size: 0.9rem;
- 
   }
   .descripcion-emprendimiento blockquote {
-   
     font-size: 0.9rem;
-
   }
   .emprendimiento .img img {
     width: 250px;
@@ -267,46 +254,35 @@ body .titulo2 h1 {
   }
 }
 @media (max-width: 600px) {
-  .emprendimiento{
-    flex-direction: column-reverse ;
+  .emprendimiento {
+    flex-direction: column-reverse;
     align-items: center;
   }
   .descripcion-emprendimiento {
-  width: 100%;
-
-}
-.descripcion-emprendimiento p {
-
-  margin: 20px 0 20px 0;
- 
-}
-.contenedor-titulos{
-  width: 90%;
-  margin: 0 auto;
-}
-  
+    width: 100%;
+  }
+  .descripcion-emprendimiento p {
+    margin: 20px 0 20px 0;
+  }
+  .contenedor-titulos {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 500px) {
-  
-
   .titulos p span {
     font-size: 1rem;
     width: 50%;
- 
   }
 
   body .titulo2 h1 {
     font-size: 2rem;
   }
-
-
-
 }
 
-
 @media (max-width: 393px) {
-  .titulos{
+  .titulos {
     width: 70%;
     margin: 50px auto 40px auto;
   }
