@@ -8,12 +8,12 @@ function cargarNavbar() {
   fetch("navbar.html")
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Error al cargar navbar " + response.status);
+        throw new Error("Error al cargar navbar " + response.status); //Mensaje de error si la carga falla
       }
       return response.text();
     })
     .then((data) => {
-      document.getElementById("navbar-container").innerHTML = data;
+      document.getElementById("navbar-container").innerHTML = data; //Inserta el navbar en el contenedor
       actualizarContadorCarrito(); // Llamar después de cargar el navbar
     })
     .catch((err) => console.error("Error:", err));
@@ -34,7 +34,7 @@ function cargarFooter() {
       return response.text();
     })
     .then((data) => {
-      document.getElementById("footer-container").innerHTML = data;
+      document.getElementById("footer-container").innerHTML = data; //Inserta el Footer en el contenedor
     })
     .catch((err) => console.error("Error:", err));
 }
@@ -50,7 +50,7 @@ function inicializar() {
   cargarFooter();
 }
 
-window.onload = inicializar;
+window.onload = inicializar; //ejecuta la funcion cuando la pagina haya cargado completamente
 
 // Función para actualizar el contador de productos
 function actualizarContadorCarrito() {
@@ -126,7 +126,8 @@ function cargarCarrito() {
   Object.values(productosAgrupados).forEach((producto) => {
     const esUnico = producto.cantidad === 1; // Verificar si la cantidad es 1
 
-    const productoHTML = `
+    //Crea el HTML para mostrar el producto
+    const productoHTML = ` 
       <div class="producto" data-id="${producto.productoId}">
         <div class="img">
           <img src="${producto.rutaImagen}" alt="${producto.nombre}" />
@@ -185,6 +186,7 @@ function agregarEventos(productoId, cantidad) {
       actualizarSubtotal();
     });
   }
+
   // Evento para disminuir la cantidad
   if (cantidad > 1) {
     const btnMinus = document.querySelector(`[data-id="${productoId}"] .minus`);
@@ -209,6 +211,7 @@ function agregarEventos(productoId, cantidad) {
     });
   }
 }
+
 // Función para actualizar la cantidad de un producto en el carrito
 function actualizarCantidadProducto(productoId, cantidad) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -221,7 +224,6 @@ function actualizarCantidadProducto(productoId, cantidad) {
     // Actualizar la cantidad
     producto.cantidad += cantidad;
 
-    // Si la cantidad es 0 o menos, eliminar el producto
     if (producto.cantidad <= 0) {
       carrito = carrito.filter((prod) => prod.productoId !== productoId);
     }
@@ -243,7 +245,6 @@ function eliminarProductoDelCarrito(productoId) {
   // Guardar el carrito actualizado
   localStorage.setItem("carrito", JSON.stringify(carrito));
 
-  // Recargar el carrito
   cargarCarrito();
 }
 
@@ -295,7 +296,7 @@ function actualizarProductoEnAPI(carrito) {
     body: JSON.stringify(
       carrito.map((producto) => ({
         ProductoId: producto.productoId,
-        Cantidad: producto.cantidad, // Aquí debe ir la cantidad que quieres eliminar, no el stock
+        Cantidad: producto.cantidad,
       }))
     ),
   })

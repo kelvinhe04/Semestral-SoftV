@@ -63,7 +63,7 @@ let productosOriginales = []; // Array para almacenar todos los productos
 
 // Función para cargar todos los productos desde la API
 async function cargarProductos() {
-  const apiUrl = "https://localhost:7156/api/Productos/all";
+  const apiUrl = "https://localhost:7156/api/Productos/all"; //Conexion con la APi
 
   try {
     const response = await fetch(apiUrl);
@@ -71,9 +71,9 @@ async function cargarProductos() {
       throw new Error("Error al obtener los productos");
     }
 
+    //Convierte la respuesta en formato JSON
     const productos = await response.json();
     productosOriginales = productos; // Guardar productos originales para búsqueda
-
     if (!productos || productos.length === 0) {
       mostrarPantallaVacia("No hay productos disponibles");
     } else {

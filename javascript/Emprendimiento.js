@@ -7,7 +7,7 @@
 function cargarNavbar() {
   fetch("navbar.html")
     .then((response) => {
-      if (!response.ok) {
+      if (!response.ok) { //Verifica si la respuesta fue exitosa
         throw new Error("Error al cargar navbar " + response.status);
       }
       return response.text();
@@ -16,7 +16,7 @@ function cargarNavbar() {
       document.getElementById("navbar-container").innerHTML = data;
       actualizarContadorCarrito(); // Llamar después de cargar el navbar
     })
-    .catch((err) => console.error("Error:", err));
+    .catch((err) => console.error("Error:", err)); //Error en consola
 }
 
 ////////////////////////////////////////////////////////
@@ -51,21 +51,23 @@ function inicializar() {
   cargarFooter();
 }
 
-window.onload = inicializar;
+window.onload = inicializar; //ejecuta la funcion cuando la pagina haya cargado completamente
 
 // Función para cargar los productos
 async function cargarProductos() {
-  const apiUrl = "https://localhost:7156/api/Productos/all";
+  const apiUrl = "https://localhost:7156/api/Productos/all"; //Conexion con la API
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) {
       throw new Error("Error al obtener los productos");
     }
-    const productos = await response.json();
+
+    //Convierte la respuesta en formato JSON
+    const productos = await response.json(); 
     return productos;
   } catch (error) {
     console.error("Error:", error);
-    return [];
+    return []; //arreglo vacio en caso de error
   }
 }
 
@@ -78,8 +80,8 @@ let todosLosProductos = [];
 
 // Función de búsqueda de productos
 function buscarProductos(event) {
-  const termino = event.target.value.toLowerCase();
-  const suggestionsList = document.querySelector(".suggestions-list");
+  const termino = event.target.value.toLowerCase(); // Obtiene el valor de búsqueda y lo convierte a minúsculas
+  const suggestionsList = document.querySelector(".suggestions-list"); // Lista de sugerencias
 
   // Limpiar lista de sugerencias
   suggestionsList.innerHTML = "";
@@ -91,7 +93,7 @@ function buscarProductos(event) {
       producto.nombre.toLowerCase().startsWith(termino)
     );
 
-    suggestionsList.style.display = "block";
+    suggestionsList.style.display = "block"; // Muestra las sugerencias si hay resultados
 
     if (sugerencias.length > 0) {
       // Mostrar sugerencias

@@ -56,12 +56,14 @@ window.onload = inicializar;
 
 // Función para cargar los productos
 async function cargarProductos() {
-  const apiUrl = "https://localhost:7156/api/Productos/all";
+  const apiUrl = "https://localhost:7156/api/Productos/all"; //Conexion con la API
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) {
       throw new Error("Error al obtener los productos");
     }
+
+    //Convierte la respuesta en formato JSON
     const productos = await response.json();
     return productos;
   } catch (error) {
