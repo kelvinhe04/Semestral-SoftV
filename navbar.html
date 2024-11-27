@@ -23,11 +23,16 @@
           <a class="navbar-brand" href="index.html">AgroDelis</a>
         </div>
 
-        <div class="search-container"> <!--Barra de busqueda-->
-          <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-          <input type="text" placeholder="Search" class="search-input" />
-        </div>
-
+        <div class="search-container">
+  <a href="#" onclick="irAOrdenar()"><i class="fa-solid fa-magnifying-glass"></i></a>
+  <input
+    type="text"
+    placeholder="Buscar productos..."
+    class="search-input"
+    oninput="buscarProductos(event)"
+  />
+  <ul class="suggestions-list"></ul>
+</div>
         <div class="carrito">
           <a href="Carrito.html"><img
             src="Img/Iconos/carrito-de-compras.png"
@@ -98,6 +103,6 @@
     </div>
   </nav>
 
-  
+  <script src="javascript/navbar.js"></script>
 </body>
 </html>

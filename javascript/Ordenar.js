@@ -67,84 +67,41 @@ async function cargarProductos() {
 
   try {
     const response = await fetch(apiUrl);
-
-    // Verificar si la respuesta es válida
     if (!response.ok) {
       throw new Error("Error al obtener los productos");
     }
 
-    // Convertir la respuesta en JSON
     const productos = await response.json();
+    productosOriginales = productos; // Guardar productos originales para búsqueda
 
-    // Si no hay productos
     if (!productos || productos.length === 0) {
       mostrarPantallaVacia("No hay productos disponibles");
     } else {
-      ocultarPantalla(); // Ocultamos la pantalla si hay productos
-      mostrarProductos(productos); // Mostramos los productos
+      ocultarPantalla(); // Ocultar la pantalla si hay productos
+      mostrarProductos(productos); // Mostrar los productos
     }
+
+    return productos; // Devuelve los productos cargados
   } catch (error) {
     console.error("Error:", error);
     mostrarPantallaVacia(
       "Error al obtener los datos. Intenta de nuevo más tarde."
     );
+    return []; // Devuelve un arreglo vacío si hay un error
   }
 }
 
-// Mostrar el mensaje cuando no hay productos o hay un error
-function mostrarPantallaVacia(mensaje) {
-  const pantalla = document.querySelector(".pantalla");
-  pantalla.classList.add("vacia");
-  pantalla.textContent = mensaje;
-}
 
-// Ocultar la pantalla cuando hay productos
-function ocultarPantalla() {
-  const pantalla = document.querySelector(".pantalla");
-  pantalla.classList.add("oculta");
-}
 
-////////////////////////////////////////////////////////
-
-//PASAR LOS PRODUCTOS DE ORDERNAR.HTML A CARRITO.HTML//
-
-////////////////////////////////////////////////////////
-
-// Función para añadir un producto al carrito
-function añadirProductoAlCarrito(producto) {
-  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-  // Verificar si el producto ya existe en el carrito
-  const indexProductoExistente = carrito.findIndex(
-    (item) => item.productoId === producto.productoId
-  );
-
-  if (indexProductoExistente !== -1) {
-    // Si el producto ya existe, solo aumentamos la cantidad
-    carrito[indexProductoExistente].cantidad += 1;
-  } else {
-    // Si el producto no existe, lo añadimos con cantidad 1
-    producto.cantidad = 1;
-    carrito.push(producto);
-  }
-
-  // Guardar el carrito actualizado en localStorage
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-
-  // Actualizar el contador y el subtotal
-  actualizarContadorCarrito();
-}
-
-////////////////////////////////////////////////////////
-
-//MOSTRAR LOS PRODUCTOS DESPUES DE CONSUMIR LA API//
-
-////////////////////////////////////////////////////////
-
-// Función para mostrar productos en la página
+// Función para mostrar los productos en el contenedor
 function mostrarProductos(productos) {
   const contenedor = document.getElementById("productos-container");
   contenedor.innerHTML = ""; // Limpiar productos anteriores
+
+  if (productos.length === 0) {
+    contenedor.innerHTML = `<p>No se encontraron productos con ese término</p>`;
+    return;
+  }
 
   productos.forEach((producto) => {
     const productoHTML = `
@@ -185,7 +142,6 @@ function mostrarProductos(productos) {
         rutaImagen: boton.getAttribute("data-rutaImagen"),
       };
 
-      // Verificar si el stock es 0
       if (producto.stock <= 0) {
         alert(`El producto "${producto.nombre}" no está disponible.`);
         return; // No añadir el producto al carrito
@@ -195,6 +151,108 @@ function mostrarProductos(productos) {
     });
   });
 }
+
+// Función combinada para filtrar productos y mostrar sugerencias
+function buscarProductos(event) {
+  const termino = event.target.value.toLowerCase();
+  const suggestionsList = document.querySelector(".suggestions-list");
+
+  // Limpiar lista de sugerencias
+  suggestionsList.innerHTML = "";
+
+  // Filtrar productos por el término de búsqueda
+  const productosFiltrados = productosOriginales.filter(
+    (producto) => producto.nombre.toLowerCase().includes(termino) // Usar includes para mejorar la búsqueda
+  );
+
+  // Mostrar productos filtrados en el contenedor
+  mostrarProductos(productosFiltrados);
+
+  // Si estamos en Ordenar.html, no mostrar las sugerencias
+  if (window.location.pathname.includes("Ordenar.html")) {
+    suggestionsList.style.display = "none";
+    return; // Salir de la función si estamos en Ordenar.html
+  }
+
+  // Mostrar sugerencias debajo del input solo si no estamos en Ordenar.html
+  if (termino) {
+    suggestionsList.style.display = "block";
+
+    if (productosFiltrados.length > 0) {
+      productosFiltrados.forEach((producto) => {
+        const li = document.createElement("li");
+        li.textContent = producto.nombre;
+        li.addEventListener("click", () => seleccionarProducto(producto));
+        suggestionsList.appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.textContent = "Producto no encontrado";
+      li.classList.add("no-results");
+      suggestionsList.appendChild(li);
+    }
+  } else {
+    suggestionsList.style.display = "none"; // Ocultar las sugerencias si no hay texto
+  }
+}
+
+
+// Función para seleccionar un producto desde las sugerencias
+function seleccionarProducto(producto) {
+  const input = document.querySelector(".search-input");
+  input.value = producto.nombre;
+
+  // Actualizar productos visibles
+  mostrarProductos([producto]);
+  cerrarSugerencias();
+}
+
+// Función para cerrar las sugerencias
+function cerrarSugerencias() {
+  const suggestionsList = document.querySelector(".suggestions-list");
+  suggestionsList.style.display = "none";
+}
+
+// Detectar clics fuera del contenedor de búsqueda
+document.addEventListener("click", (event) => {
+  const searchContainer = document.querySelector(".search-container");
+  if (!searchContainer.contains(event.target)) {
+    cerrarSugerencias();
+  }
+});
+
+// Funciones para manejar el carrito
+function añadirProductoAlCarrito(producto) {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  const indexProductoExistente = carrito.findIndex(
+    (item) => item.productoId === producto.productoId
+  );
+
+  if (indexProductoExistente !== -1) {
+    carrito[indexProductoExistente].cantidad += 1;
+  } else {
+    producto.cantidad = 1;
+    carrito.push(producto);
+  }
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  actualizarContadorCarrito();
+}
+
+// Mostrar mensaje cuando no hay productos o hay error
+function mostrarPantallaVacia(mensaje) {
+  const pantalla = document.querySelector(".pantalla");
+  pantalla.classList.add("vacia");
+  pantalla.textContent = mensaje;
+}
+
+// Ocultar la pantalla cuando hay productos
+function ocultarPantalla() {
+  const pantalla = document.querySelector(".pantalla");
+  pantalla.classList.add("oculta");
+}
+
 
 // Función para actualizar el contador de productos
 function actualizarContadorCarrito() {
@@ -287,4 +345,22 @@ eliminarChecksBtn.addEventListener("click", () => {
   checkboxes.forEach((checkbox) => {
     checkbox.checked = false;
   });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    const searchInput = document.querySelector(".search-input");
+    const parametroBusqueda = localStorage.getItem("search"); // Obtener el valor de búsqueda desde localStorage
+    console.log(parametroBusqueda);
+
+    if (searchInput && parametroBusqueda) {
+      searchInput.value = parametroBusqueda; // Colocar el valor en el input de búsqueda
+      buscarProductos({ target: { value: parametroBusqueda } }); // Ejecutar la búsqueda automáticamente
+
+      // Borrar el valor de búsqueda de localStorage después de realizar la búsqueda
+      localStorage.removeItem("search");
+    }
+  }, 500); // Esperar medio segundo para asegurarse de que el DOM esté completamente cargado
 });
