@@ -224,10 +224,7 @@
   font-size: 16px;
   cursor: pointer;
   color: #777;
-
 }
-
-
 
 .suggestions-list li.no-results {
   color: #777;
@@ -249,8 +246,6 @@
 }
 
 @media (max-width: 393px) {
-
-
   .navbar-brand{
     font-size: 0.8rem !important
   }
