@@ -91,18 +91,18 @@ async function cargarProductos() {
   }
 }
 
-
-
 // Función para mostrar los productos en el contenedor
 function mostrarProductos(productos) {
   const contenedor = document.getElementById("productos-container");
   contenedor.innerHTML = ""; // Limpiar productos anteriores
 
-  if (productos.length === 0) {
-    contenedor.innerHTML = `<p>No se encontraron productos con ese término</p>`;
+  // Si no hay productos disponibles, mostrar el mensaje solo si los productos originales existen
+  if (productos.length === 0 && productosOriginales.length > 0) {
+    contenedor.innerHTML = `<p class="alerta">No se encontraron productos con ese término!</p>`;
     return;
   }
 
+  // Si se encontraron productos, mostrar cada uno de ellos
   productos.forEach((producto) => {
     const productoHTML = `
       <div class="producto">
@@ -156,9 +156,15 @@ function mostrarProductos(productos) {
 function buscarProductos(event) {
   const termino = event.target.value.toLowerCase();
   const suggestionsList = document.querySelector(".suggestions-list");
+  const contenedor = document.getElementById("productos-container"); // Contenedor donde mostrar los productos o el mensaje de error
 
   // Limpiar lista de sugerencias
   suggestionsList.innerHTML = "";
+
+  // Verificar si hay productos cargados desde la API
+  if (productosOriginales.length === 0) {
+    return; // Si no hay productos disponibles, no hacer nada
+  }
 
   // Filtrar productos por el término de búsqueda
   const productosFiltrados = productosOriginales.filter(
@@ -186,6 +192,7 @@ function buscarProductos(event) {
         suggestionsList.appendChild(li);
       });
     } else {
+      // Aquí solo mostramos "Producto no encontrado" si no hay coincidencias
       const li = document.createElement("li");
       li.textContent = "Producto no encontrado";
       li.classList.add("no-results");
@@ -194,7 +201,10 @@ function buscarProductos(event) {
   } else {
     suggestionsList.style.display = "none"; // Ocultar las sugerencias si no hay texto
   }
+
+  
 }
+
 
 
 // Función para seleccionar un producto desde las sugerencias

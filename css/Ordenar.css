@@ -40,6 +40,10 @@ p {
   gap: 25px;
   justify-content: flex-start; /* Alinea las cartas a la izquierda */
 }
+#productos-container .alerta{
+  margin: 20vh 0;
+  font-size: 1.5rem !important;
+}
 .producto .img img {
   width: 200px; /* La imagen no será más ancha que 200px */
   height: 200px;
