@@ -248,16 +248,19 @@ function eliminarProductoDelCarrito(productoId) {
   cargarCarrito();
 }
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  cargarCarrito();
+  actualizarSubtotal();
+});
+
+
 // Evento para el botón "Borrar todo"
 const botonBorrarTodo = document.getElementById("borrar-todo");
 if (botonBorrarTodo) {
   botonBorrarTodo.addEventListener("click", borrarTodoCarrito);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  cargarCarrito();
-  actualizarSubtotal();
-});
 
 // Función para vaciar todo el carrito
 function borrarTodoCarrito() {

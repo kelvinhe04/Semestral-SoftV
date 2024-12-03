@@ -205,6 +205,24 @@ function buscarProductos(event) {
   
 }
 
+// Funciones para manejar el carrito
+function añadirProductoAlCarrito(producto) {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  const indexProductoExistente = carrito.findIndex(
+    (item) => item.productoId === producto.productoId
+  );
+
+  if (indexProductoExistente !== -1) {
+    carrito[indexProductoExistente].cantidad += 1;
+  } else {
+    producto.cantidad = 1;
+    carrito.push(producto);
+  }
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  actualizarContadorCarrito();
+}
 
 
 // Función para seleccionar un producto desde las sugerencias
@@ -231,24 +249,6 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// Funciones para manejar el carrito
-function añadirProductoAlCarrito(producto) {
-  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-  const indexProductoExistente = carrito.findIndex(
-    (item) => item.productoId === producto.productoId
-  );
-
-  if (indexProductoExistente !== -1) {
-    carrito[indexProductoExistente].cantidad += 1;
-  } else {
-    producto.cantidad = 1;
-    carrito.push(producto);
-  }
-
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  actualizarContadorCarrito();
-}
 
 // Mostrar mensaje cuando no hay productos o hay error
 function mostrarPantallaVacia(mensaje) {
