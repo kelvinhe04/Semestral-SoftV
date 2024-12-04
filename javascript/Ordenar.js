@@ -103,53 +103,58 @@ function mostrarProductos(productos) {
   }
 
   // Si se encontraron productos, mostrar cada uno de ellos
-  productos.forEach((producto) => {
-    const productoHTML = `
-      <div class="producto">
-        <div class="img"><img src="${producto.rutaImagen}" alt="${producto.nombre}" /></div>
-        <h3>${producto.nombre}</h3>
-        <p>${producto.descripcion}</p>
-        <p>Precio: $${producto.precio}</p>
-        <p>Stock: ${producto.stock}</p>
-        <p>Categoria: ${producto.categoriaNombre}</p>
-        <p>Vendedor: ${producto.vendedorNombre}</p>
-        <div 
-          class="btn add-to-cart-btn" 
-          data-id="${producto.productoId}" 
-          data-nombre="${producto.nombre}" 
-          data-descripcion="${producto.descripcion}" 
-          data-precio="${producto.precio}" 
-          data-stock="${producto.stock}" 
-          data-rutaImagen="${producto.rutaImagen}">
-          <a href="#" class="boton-enlace">Añadir</a> 
-        </div>
+productos.forEach((producto) => {
+  const productoHTML = `
+    <div class="producto">
+      <div class="img"><img src="${producto.rutaImagen}" alt="${producto.nombre}" /></div>
+      <h3>${producto.nombre}</h3>
+      <p>${producto.descripcion}</p>
+      <p>Precio: $${producto.precio}</p>
+      <p>Stock: ${producto.stock}</p>
+      <p>Categoria: ${producto.categoriaNombre}</p>
+      <p>Vendedor: ${producto.vendedorNombre}</p>
+      <div 
+        class="btn add-to-cart-btn" 
+        data-id="${producto.productoId}" 
+        data-nombre="${producto.nombre}" 
+        data-descripcion="${producto.descripcion}" 
+        data-precio="${producto.precio}" 
+        data-stock="${producto.stock}" 
+        data-rutaImagen="${producto.rutaImagen}"
+        data-vendedorId="${producto.vendedorId}"> <!-- Añadir el vendedorId aquí -->
+        <a href="#" class="boton-enlace">Añadir</a> 
       </div>
-    `;
-    contenedor.innerHTML += productoHTML;
+    </div>
+  `;
+  contenedor.innerHTML += productoHTML;
+});
+
+// Añadir eventos a los botones "Añadir al carrito"
+const botonesAñadir = document.querySelectorAll(".add-to-cart-btn");
+botonesAñadir.forEach((boton) => {
+  boton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // Obtener todos los datos del producto, incluido vendedorId
+    const producto = {
+      productoId: boton.getAttribute("data-id"),
+      nombre: boton.getAttribute("data-nombre"),
+      descripcion: boton.getAttribute("data-descripcion"),
+      precio: parseFloat(boton.getAttribute("data-precio")),
+      stock: parseInt(boton.getAttribute("data-stock")),
+      rutaImagen: boton.getAttribute("data-rutaImagen"),
+      vendedorId: boton.getAttribute("data-vendedorId"), // Añadir vendedorId
+    };
+
+    if (producto.stock <= 0) {
+      alert(`El producto "${producto.nombre}" no está disponible.`);
+      return; // No añadir el producto al carrito si no hay stock
+    }
+
+    añadirProductoAlCarrito(producto); // Añadir el producto con vendedorId al carrito
   });
+});
 
-  // Añadir eventos a los botones "Añadir al carrito"
-  const botonesAñadir = document.querySelectorAll(".add-to-cart-btn");
-  botonesAñadir.forEach((boton) => {
-    boton.addEventListener("click", (e) => {
-      e.preventDefault();
-      const producto = {
-        productoId: boton.getAttribute("data-id"),
-        nombre: boton.getAttribute("data-nombre"),
-        descripcion: boton.getAttribute("data-descripcion"),
-        precio: parseFloat(boton.getAttribute("data-precio")),
-        stock: parseInt(boton.getAttribute("data-stock")),
-        rutaImagen: boton.getAttribute("data-rutaImagen"),
-      };
-
-      if (producto.stock <= 0) {
-        alert(`El producto "${producto.nombre}" no está disponible.`);
-        return; // No añadir el producto al carrito
-      }
-
-      añadirProductoAlCarrito(producto);
-    });
-  });
 }
 
 // Función combinada para filtrar productos y mostrar sugerencias

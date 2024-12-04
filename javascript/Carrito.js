@@ -100,6 +100,8 @@ function actualizarSubtotal() {
 function cargarCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || []; // Obtener el carrito desde localStorage
   const contenedorCarrito = document.getElementById("carrito-container");
+  console.log("Carrito con los productos antes de enviar:", carrito);
+
 
   if (carrito.length === 0) {
     contenedorCarrito.classList.add("vacio"); // Añadir clase para cuando el carrito está vacío
@@ -266,17 +268,22 @@ if (botonBorrarTodo) {
 function borrarTodoCarrito() {
   // Obtener el carrito actual de localStorage
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+console.log("Carrito desde localStorage:", carrito);
 
   // Verificar si hay productos en el carrito
   if (carrito.length === 0) {
-    // console.log("El carrito ya está vacío.");
+    console.log("El carrito ya está vacío.");
     return; // No hay necesidad de sincronizar con la API si ya está vacío
   }
 
-  // Sincronizar con la base de datos o API primero
-  actualizarProductoEnAPI(carrito)
+  // Registrar ventas primero
+  registrarVentas(carrito)
     .then(() => {
-      // Eliminar todo el carrito de localStorage después de la sincronización exitosa
+      // Después de registrar las ventas, actualizar el stock de los productos
+      return actualizarProductoEnAPI(carrito);
+    })
+    .then(() => {
+      // Eliminar todo el carrito de localStorage después de completar ambas operaciones
       localStorage.removeItem("carrito");
 
       actualizarContadorCarrito();
@@ -285,7 +292,7 @@ function borrarTodoCarrito() {
       cargarCarrito();
     })
     .catch((error) => {
-      console.error("Error al sincronizar con la API:", error);
+      console.error("Error al procesar el carrito:", error);
     });
 }
 
@@ -305,14 +312,41 @@ function actualizarProductoEnAPI(carrito) {
   })
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Error en la sincronización con la API");
+        throw new Error("Error en la sincronización con la API para actualizar productos");
       }
       return response.json(); // Procesar la respuesta de la API
     })
     .then((data) => {
-      console.log("Sincronización con la API exitosa:", data);
-    })
-    .catch((error) => {
-      console.error("Error al sincronizar con la API:", error);
+      console.log("Sincronización con la API exitosa para actualización de productos:", data);
     });
 }
+
+function registrarVentas(carrito) {
+  // Verifica el contenido del carrito antes de enviar
+  console.log("Datos del carrito a enviar:", carrito);
+
+  return fetch("https://localhost:7156/api/Ventas/registrar", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(
+      carrito.map((producto) => ({
+        ProductoId: producto.productoId,
+        Cantidad: producto.cantidad,
+        Precio: producto.precio,
+        VendedorId: producto.vendedorId,
+      }))
+    ),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error al registrar las ventas");
+      }
+      return response.json(); // Procesar la respuesta de la API
+    })
+    .then((data) => {
+      console.log("Ventas registradas exitosamente:", data);
+    });
+}
+
