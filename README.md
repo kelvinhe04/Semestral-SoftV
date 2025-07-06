@@ -33,4 +33,4 @@ Los productos son gestionados y publicados por los vendedores a través de una a
 ## 📍 Vista en vivo
 
 Puedes acceder a la aplicación en línea aquí:  
-👉 [https://kelvinhe04.github.io/Semestral-SoftV/](https://semestral-softv.netlify.app/)
+👉 https://semestral-softv.netlify.app/
