@@ -63,7 +63,8 @@ let productosOriginales = []; // Array para almacenar todos los productos
 
 // Función para cargar todos los productos desde la API
 async function cargarProductos() {
-  const apiUrl = "https://localhost:7156/api/Productos/all"; //Conexion con la APi
+  const apiUrl =
+      "https://apiagrodelis20250705155616.azurewebsites.net/api/Productos/all"; //Conexion con la APi
 
   try {
     const response = await fetch(apiUrl);
