@@ -8,30 +8,29 @@ Los productos son gestionados y publicados por los vendedores a través de una a
 
 ## 🔧 Tecnologías utilizadas
 
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend/API REST:** C# (.NET) – [repositorio separado]
-- **Aplicación Desktop:** C# Windows Forms / WPF – [repositorio separado]
+- **Frontend:** HTML, CSS, JavaScript  
+- **Backend/API REST:** C# (.NET) – [repositorio separado]  
+- **Aplicación Desktop:** C# Windows Forms / WPF – disponible en la sección **Releases** del repositorio de la API REST.
 
 ---
 
 ## 📦 Funcionalidades principales
 
-- Visualización de productos agrícolas y carnes.
-- Organización de productos por categoría.
-- Conexión con API REST para obtener datos dinámicamente.
+- Visualización de productos agrícolas y carnes.  
+- Organización de productos por categoría.  
+- Conexión con API REST para obtener datos dinámicamente.  
 - Estilo tipo Amazon para mejorar la experiencia del cliente.
 
 ---
 
 ## 🔗 Repositorios relacionados
 
-- 🔙 [API REST en C#](https://github.com/kelvinhe04/ApiAgrodelis)  
-- 🖥️ [Aplicación Desktop C# para vendedores](https://github.com/kelvinhe04/ApiAgrodelis)
+- 🔙 [API REST en C# (con Releases que incluyen la aplicación de escritorio)](https://github.com/kelvinhe04/ApiAgrodelis)  
+- 🖥️ Aplicación Desktop C# para vendedores incluida en los **Releases** del repositorio anterior.
 
 ---
 
 ## 📍 Vista en vivo
 
 Puedes acceder a la aplicación en línea aquí:  
-👉 [https://kelvinhe04.github.io/Semestral-SoftV/]((https://semestral-softv.netlify.app/))
-
+👉 [https://kelvinhe04.github.io/Semestral-SoftV/](https://semestral-softv.netlify.app/)
